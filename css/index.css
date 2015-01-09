@@ -16,6 +16,7 @@ body {
 
 .button {
 	display: inline-block;
+	vertical-align: top;
 	width: 200px;
 	height: 200px;
 	padding: 15px;
@@ -43,6 +44,5 @@ body {
 	margin: 0px 0px 10px 0px;
 }
 .buttonBody {
-	font-size: 100%;
 	margin: 10px 0px 10px 0px;
 }
