@@ -14,6 +14,11 @@ body {
 	margin: 0;
 }
 
+#buttonContainer {
+	width:1200px;
+	margin: auto;
+}
+
 .button {
 	display: inline-block;
 	vertical-align: top;

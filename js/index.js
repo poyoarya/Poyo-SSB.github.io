@@ -8,12 +8,6 @@ function hexToRgb(hex) {
 	b = parseInt(result[3], 16)
 	return [r, g, b];
 }
-/**
- * @param   Number  r       The red color value
- * @param   Number  g       The green color value
- * @param   Number  b       The blue color value
- * @return  Array           The HSL representation
-**/
 function rgbToHsl(r, g, b) {
     r /= 255, g /= 255, b /= 255;
     var max = Math.max(r, g, b), min = Math.min(r, g, b);
@@ -44,3 +38,25 @@ for (var i = 0; i < buttons.length; i++) {
 										"#" + buttons[i].id + ":hover {text-shadow:0px 1px 0px hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);border:2px solid hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+18) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-2) + "%, 1) 100%)}\r" + 
 										"#" + buttons[i].id + ":active {text-shadow:0px 1px 0px hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);	border:2px solid hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 100%)}\r"
 }
+
+$('.button').hover(function () {
+	if ($(this).index() == 0) {
+		$(this).animate({
+			'width': 210,
+			'height': 210,
+			'margin': 15
+		}, 500);
+	} else {
+		$(this).animate({
+			'width': 210,
+			'height': 210,
+			'margin': 15
+		}, 500);
+	}
+}, function () {
+	$(this).animate({
+		'width': 200,
+		'height': 200,
+		'margin': 25
+	}, 500);
+});
