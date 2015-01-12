@@ -40,23 +40,15 @@ for (var i = 0; i < buttons.length; i++) {
 }
 
 $('.button').hover(function () {
-	if ($(this).index() == 0) {
-		$(this).animate({
-			'width': 210,
-			'height': 210,
-			'margin': 15
-		}, 500);
-	} else {
-		$(this).animate({
-			'width': 210,
-			'height': 210,
-			'margin': 15
-		}, 500);
-	}
+	$(this).stop().animate({
+		'width': 210,
+		'height': 210,
+		'margin': 20
+	}, 100);
 }, function () {
-	$(this).animate({
+	$(this).stop().animate({
 		'width': 200,
 		'height': 200,
 		'margin': 25
-	}, 500);
+	}, 100);
 });
