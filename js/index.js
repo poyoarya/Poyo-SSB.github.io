@@ -41,14 +41,12 @@ for (var i = 0; i < buttons.length; i++) {
 
 $('.button').hover(function () {
 	$(this).stop().animate({
-		'width': 210,
-		'height': 210,
-		'margin': 20
+		'margin': 20,
+		'padding': 20
 	}, 100);
 }, function () {
 	$(this).stop().animate({
-		'width': 200,
-		'height': 200,
-		'margin': 25
+		'margin': 25,
+		'padding': 15
 	}, 100);
 });
