@@ -48,11 +48,11 @@ for (var i = 0; i < buttons.length; i++) {
 $('.button').hover(function () {
 	$(this).stop().animate({
 		'margin': 20,
-		'padding': 20
-	}, 100);
+		'padding': 15
+	}, 100, "swing");
 }, function () {
 	$(this).stop().animate({
 		'margin': 25,
-		'padding': 15
-	}, 100);
+		'padding': 10
+	}, 100, "swing");
 });

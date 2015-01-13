@@ -30,13 +30,15 @@ body {
 	background-image: url("images/logo.svg");
 	background-size: 500px;
 	background-repeat: no-repeat;
+	background-position: center center;
+}
 
 .button {
 	display: inline-block;
 	vertical-align: top;
 	width: 200px;
 	height: 200px;
-	padding: 15px;
+	padding: 10px;
 	border-radius: 35px;
 	box-shadow:inset 0px 2px 2px 0px white;
 	position: relative;
@@ -46,12 +48,11 @@ body {
 }
 
 .buttonHeader {
-	font-size: 170%;
+	font-size: 150%;
 	margin: 0px 0px 10px 0px;
-	text-align: justify;
-	margin: 0 auto;
-	width: 30em;
+	text-align: center;
 }
 .buttonBody {
 	margin: 10px 0px 10px 0px;
+	font-size: 90%;
 }
