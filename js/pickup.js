@@ -1,14 +1,26 @@
 var part1, part2, part3, part4, part5;
 
-var greeting = ["Hey", "Sup", "Hello", "Yo", "Greetings", "ayy"];
+var greeting = [
+					"Hey", 					"Sup", 					"Hello", 					"Yo", 					"Greetings", 					"ayy"
+];
 
-var adressment = ["babe", "girl", "female", "m'lady", "strager", "honeybuns", "bub", "Satan"];
+var adressment = [
+					"babe", 					"girl", 					"female", 					"m'lady", 					"stranger", 					"honeybuns", 					"bub", 					"Satan"
+];
 
-var noun1 = ["a pile of leaves", "ded", "an angel", "roadkill", "Jesus", "a calculator", "my basement", "my creepy uncle", "the garbage man", "in jail", "my pants", "a judge of the Supreme Court", "a rancid banana", "actually male", "Moses", "the Ebola virus", "a busy six-year-old", "above 1200 pounds", "lacking in vitamins", "a drug dealer", "a truck", "babby", "in MLG"];
+var noun1 = [
+					"a pile of leaves", 					"ded", 					"an angel", 					"roadkill", 					"Jesus", 					"a calculator", 					"my basement", 					"my creepy uncle", 					"the garbage man", 					"in jail", 					"my pants", 					"a judge of the Supreme Court", 					"a rancid banana", 					"actually male", 					"Moses", 					"the Ebola virus", 					"a busy six-year-old", 					"above 1200 pounds", 					"lacking in vitamins", 					"a drug dealer", 					"a truck", 					"babby", 					"in MLG"
+];
 
-var noun2 =	["your muscles", "my father", "Jesus", "my love", "the American flag", "the doorframe", "this portable toilet", "my bottle cap collection", "a drug addict", "that Nigerian prince", "a spooky ghost", "an estranged noodle", "that disgruntled midget", "Barack Obama", "the angry Russian man", "your spooky skeltal", "this Christian pastor", "my controller", "Vladmir Putin"];
+var noun2 =	[
+					"your muscles are", 					"my father is", 					"Jesus is", 					"my love is", 					"the American flag is", 					"the doorframe is", 					"this portable toilet is", 					"my bottle cap collection is", 					"a drug addict is", 					"that Nigerian prince is", 					"a spooky ghost is", 					"an estranged noodle is", 					"that disgruntled midget is", 					"Barack Obama is", 					"the angry Russian man is", 					"your spooky skeltal is", 					"this Christian pastor is", 					"my controller is", 					"Vladmir Putin is",
+					"the breadmen are",
+					"the neatly arranged array of toilets are"
+];
 
-var desc = ["is decidedly puny", "is going to explode", "is uncontrollably guzzling pickles", "is actually the Illuminati ", "is vibrating violently", "is a shower curtain", "is travelling to France", "is over 9000", "is obviously racist", "is slowly growing a cat", "is suggestively expanding", "is literally Hitler", "is a lobotomised penguin", "is spying on the NSA", "is impersonating Morgan Freeman", "is on drugs", "is in a vegetative state", "is a Satanic priest", "is hella swole", "is a massive radish", "is absurdly high", "is admittedly illegal", "is tingling", "is a filthy casual", "is gonna become a new dank meme", "is illegal in the UK", "is ded", "is worryingly missing", "is diabetic", "is triggering me", "shouting \"ALLAHU AKBAR\"",];
+var desc = [
+					"decidedly puny", 					"going to explode", 					"uncontrollably guzzling pickles", 					"actually the Illuminati ", 					"vibrating violently", 					"a shower curtain", 					"travelling to France", 					"over 9000", 					"obviously racist", 					"slowly growing a cat", 					"suggestively expanding", 					"literally Hitler", 					"a lobotomised penguin", 					"spying on the NSA", 					"impersonating Morgan Freeman", 					"on drugs", 					"in a vegetative state", 					"a Satanic priest", 					"hella swole", 					"a massive radish", 					"absurdly high", 					"admittedly illegal", 					"tingling", 					"a filthy casual", 					"gonna become a new dank meme", 					"illegal in the UK", 					"ded", 					"worryingly missing", 					"diabetic", 					"triggering me", 					"shouting \"ALLAHU AKBAR\"",
+];
 
 function getRandInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
