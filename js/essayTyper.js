@@ -18,9 +18,12 @@ var yeeArray = 	[ //define gibberish
 					"wat",
 					"bruh"
 				]
-var num = prompt("Number of words?", "1500"); //prompt for number of words
+
 var caps = true;
 var indent = true;
+
+var num = Math.floor(Math.random() * (200 - 50 + 1)) + 25;
+
 for (i = 0; i < num; i++) { //repeat over and over
 	if (indent == true) {
 		document.getElementById("essay" + id).innerHTML = document.getElementById("essay" + id).innerHTML + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
