@@ -1,0 +1,26 @@
+@font-face {
+    font-family: openSans;
+    src: url(OpenSans.ttf);
+}
+
+html {
+	background-color: black;
+	color: white;
+	font-family: openSans;
+}
+
+::selection {
+	background: white;
+	color: black;
+}
+
+body {
+	margin: 0;
+}
+
+#center {
+	width: 600px;
+	margin-left: -300px;
+	position: absolute;
+	left: 50%;
+}
