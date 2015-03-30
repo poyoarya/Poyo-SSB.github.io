@@ -22,7 +22,7 @@ var yeeArray = 	[ //define gibberish
 var caps = true;
 var indent = true;
 
-var num = Math.floor(Math.random() * (200 - 50 + 1)) + 25;
+var num = Math.floor(Math.random() * (250 - 120 + 1)) + 120;
 
 for (i = 0; i < num; i++) { //repeat over and over
 	if (indent == true) {
@@ -53,7 +53,7 @@ for (i = 0; i < num; i++) { //repeat over and over
 	var yeeRand = Math.random(); //yet another random number for newline
 	if ((yeeRand > 0.985) && (document.getElementById("essay" + id).innerHTML.countWords() > 25)) {
 		id = id + 1;
-		if (document.getElementById("essay" + (id - 1)).innerHTML.slice(-1) == ".") {
+		if (document.getElementById("essay" + (id - 1)).innerHTML.slice(-1) == "." || document.getElementById("essay" + (id - 1)).innerHTML.slice(-1) == ",") {
 			document.getElementById("essay" + (id - 1)).innerHTML = document.getElementById("center").innerHTML + "<p id=\"essay" + id + "\"></p>"
 		} else {
 			document.getElementById("essay" + (id - 1)).innerHTML = document.getElementById("essay" + (id - 1)).innerHTML + ".</br>"
@@ -63,6 +63,6 @@ for (i = 0; i < num; i++) { //repeat over and over
 		var indent = true;
 	}
 }
-if (document.getElementById("essay" + id).innerHTML.slice(-1) !== ".") {
+if (document.getElementById("essay" + id).innerHTML.slice(-1) !== "." || document.getElementById("essay" + (id - 1)).innerHTML.slice(-1) == ",") {
 	document.getElementById("essay" + id).innerHTML = document.getElementById("essay" + id).innerHTML + "."
 }

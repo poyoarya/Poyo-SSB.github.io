@@ -16,12 +16,14 @@ html {
 
 body {
 	margin: 0;
+	margin-top: 5px;
 }
 
 #center {
 	width: 600px;
 	margin-left: -300px;
 	position: absolute;
+	top: 55px;
 	left: 50%;
 }
 
@@ -29,31 +31,32 @@ body {
 	font-size: 120%;
 	display: inline-block;
 	vertical-align: top;
-	width: 220px;
+	width: 140px;
 	height: 40px;
 	padding: 0;
 	border-radius: 10px;
-	box-shadow:inset 0px 2px 2px 0px white;
-	position: relative;
-    left: 0px;
+	box-shadow: inset 0px 2px 2px 0px white;
+	position: absolute;
+	margin: 10px;
+	margin-left: -70px;
+    left: 50%;
     top: 0px;
 	line-height:0px;
-	margin: 10px;
 	color: black;
-	text-shadow:0px 1px 0px hsla(360, 0%, 70%, 1);
-	border:2px solid hsla(360, 0%, 70%, 1);
-	background:linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 80%, 1) 100%);
+	text-shadow: 0px 1px 0px hsla(360, 0%, 70%, 1);
+	border: 2px solid hsla(360, 0%, 70%, 1);
+	background: linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 80%, 1) 100%);
 	text-align: center;
 }
 
 #button:hover {
-	text-shadow:0px 1px 0px hsla(360, 0%, 80%, 1);
-	border:2px solid hsla(360, 0%, 80%, 1);
-	background:linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 90%, 1) 100%);
+	text-shadow: 0px 1px 0px hsla(360, 0%, 80%, 1);
+	border: 2px solid hsla(360, 0%, 80%, 1);
+	background: linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 90%, 1) 100%);
 }
 
 #button:active {
-	text-shadow:0px 1px 0px hsla(360, 0%, 70%, 1);
-	border:2px solid hsla(360, 0%, 70%, 1);
-	background:linear-gradient(to bottom, hsla(360, 0%, 80%, 1) 5%, hsla(360, 0%, 100%, 1) 100%);
+	text-shadow: 0px 1px 0px hsla(360, 0%, 70%, 1);
+	border: 2px solid hsla(360, 0%, 70%, 1);
+	background: linear-gradient(to bottom, hsla(360, 0%, 80%, 1) 5%, hsla(360, 0%, 100%, 1) 100%);
 }
