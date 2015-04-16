@@ -6,26 +6,39 @@ String.prototype.countWords = function() { //easy counter
 	return this.split(/\s+/).length;
 }
 
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-var textArray = 	[ //define gibberish
+
+var textArray = [ //define gibberish
 					"ayy",
 					"lmao",
 					"yee",
-					"chady",
-					"skeltal",
-					"noot",
-					"bruh",
-					"dude"
+					"bruh"
 				];
-
-$("#center").append("");
 
 function start() {
 	var paragraphs = document.getElementById("paragraphs").valueAsNumber;
 	var words = document.getElementById("words").valueAsNumber;
 	var variance = document.getElementById("variance").valueAsNumber;
 	
-	for (i = 0; i < words; i++) {
-		//aaa
+	if (words - variance < 1) {
+		window.alert("The variance factor should not exceed the number of words!")
+		return;
+	}
+	
+	var index = 1
+	
+	$("#center").empty();
+	
+	for (i = 0; i < paragraphs; i++) {
+		$("#center").append("<p id =\"paragraph" + index + "\">");
+		
+		randomIntFromInterval()
+		
+		$("#" + index + "index").append()
+		
+		index += 1;
 	}
 }
