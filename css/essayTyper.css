@@ -10,7 +10,10 @@ html {
 }
 
 #options {
-	width: 100%;
+	width: 550px;
+	position:relative;
+	margin-left: -275px;
+	left: 50%;
 }
 
 ::selection {
