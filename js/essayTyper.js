@@ -18,8 +18,16 @@ var textArray = 	[ //define gibberish
 					"dude"
 				];
 
-$("#center")
-				
+var words = document.getElementById("words").value();
+
+$("#center").append("");
+
+function start() {
+	for (i = 0; i < words; i++) {
+		//aaa
+	}
+}
+
 /*
 	var id = 1
 	var caps = true;

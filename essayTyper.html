@@ -1,15 +1,25 @@
 <html>
 	<body>
+		<form>
+			<table id="options">
+				<tr>
+					<td><p class="descs">Paragraphs: </p><input id="paragraphs" name="paragraphs" min="1" value="7" type="number" autofocus></td>
+					<td><p class="descs">Words per paragraph: </p><input id="words" name="words" min="1" value="80" type="number" autofocus></td>
+					<td><p class="descs">Variance: </p><input id="variance" name="variance" min="1" value="10" type="number" autofocus></td>
+				</tr>
+			</table>
+		</form>
 		<div id="button" onclick="location.reload()">
 			<p>New essay!</p>
 		</div>
 		<div id="center">
+			<p class="p"></p>
 		</div>
 	</body>
 	<head>
 		<link rel="stylesheet" type="text/css" href="css\essayTyper.css">
-		<script language="javascript" type="text/javascript" src="js\essayTyper.js"></script>
 		<script language="javascript" type="text/javascript" src="js\lib\jquery.js"></script>
+		<script language="javascript" type="text/javascript" src="js\essayTyper.js"></script>
 		<title>Random essay generator</title>
 	</head>
 </html>
