@@ -48,10 +48,14 @@ function start() {
 		$("#center").append("<p class=\"p\" index=\"paragraph" + i + "\"></p>");
 		
 		var wordsPer = words + randomIntFromInterval(-variance, variance);
-		var isNewSentence = 1; 
+		var isNewSentence = true; 
 		
 		for (j = 0; j < wordsPer; j++) {
-			//eaearaeraer
+			if (isNewSentence) {
+				$("paragraph" + i).append(textArray.getRandom().capitalizeFirstLetter() + " ") 
+			} else {
+				$("paragraph" + i).append(textArray.getRandom() + " ") 
+			}
 		}
 	}
 }
