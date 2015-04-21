@@ -10,6 +10,18 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+Array.prototype.getRandom = function() {
+	return this[Math.floor(Math.random() * ((this.length - 1) - 0 + 1) + 0)]
+};
+
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        alert("It'll only work if you type a number!");
+		return false;
+	}
+	return true;
+};
 
 var textArray = [ //define gibberish
 					"ayy",
@@ -29,11 +41,17 @@ function start() {
 	}
 	
 	var index = 1;
-	var isNewSentence = 1; 
 	
 	$("#center").empty();
 	
 	for (i = 0; i < paragraphs; i++) {
+		$("#center").append("<p class=\"p\" index=\"paragraph" + i + "\"></p>");
 		
+		var wordsPer = words + randomIntFromInterval(-variance, variance);
+		var isNewSentence = 1; 
+		
+		for (j = 0; j < wordsPer; j++) {
+			//eaearaeraer
+		}
 	}
 }
