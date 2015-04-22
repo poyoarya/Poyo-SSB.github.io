@@ -52,10 +52,20 @@ function start() { //bruh
 		
 		for (j = 0; j < wordsPer; j++) {
 			if (isNewSentence) {
-				$("#paragraph" + i).append(textArray.getRandom().capitalizeFirstLetter() + " ") 
+				$("#paragraph" + i).append(textArray.getRandom().capitalizeFirstLetter()) 
 			} else {
-				$("#paragraph" + i).append(textArray.getRandom() + " ") 
+				$("#paragraph" + i).append(textArray.getRandom()) 
 			}
+			
+			puncRand = Math.random();
+			
+			if (puncRand >= 0.0625) {
+				//yee
+			} else {
+				//yee
+			}
+			
+			
 			isNewSentence = false;
 		}
 	}
