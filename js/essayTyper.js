@@ -24,10 +24,10 @@ function isNumberKey(evt){ //prevents typing of non-numbers in the thingledingle
 }
 
 var textArray = [ //define gibberish
+				//	"yee",
+				//	"bruh",
 					"ayy",
-					"lmao",
-					"yee",
-					"bruh"
+					"lmao"
 				];
 
 function start() { //bruh
@@ -59,16 +59,18 @@ function start() { //bruh
 			
 			var puncRand = Math.random();
 			
-			if (puncRand > 0.0625) {
+			if (puncRand < 0.0625) {
 				puncRand = Math.random();
 				
-				if (puncRand > 0.8) {
+				if (puncRand < 0.8) {
 					puncRand = Math.random();
 					
-					if () {
-						//
+					if (puncRand > 0.05) {
+						$("#paragraph" + i).append(". ");
+						isNewSentence = true;
 					} else {
-						//
+						$("#paragraph" + i).append("? ");
+						isNewSentence = true;
 					}
 				} else {
 					$("#paragraph" + i).append(", ");
@@ -77,7 +79,6 @@ function start() { //bruh
 			} else {
 				$("#paragraph" + i).append(" ");
 			}
-			
 			
 			isNewSentence = false;
 		}
