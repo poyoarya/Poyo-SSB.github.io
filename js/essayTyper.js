@@ -57,12 +57,25 @@ function start() { //bruh
 				$("#paragraph" + i).append(textArray.getRandom()) 
 			}
 			
-			puncRand = Math.random();
+			var puncRand = Math.random();
 			
-			if (puncRand >= 0.0625) {
-				//yee
+			if (puncRand > 0.0625) {
+				puncRand = Math.random();
+				
+				if (puncRand > 0.8) {
+					puncRand = Math.random();
+					
+					if () {
+						//
+					} else {
+						//
+					}
+				} else {
+					$("#paragraph" + i).append(", ");
+				}
+				
 			} else {
-				//yee
+				$("#paragraph" + i).append(" ");
 			}
 			
 			
