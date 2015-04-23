@@ -57,7 +57,7 @@ function start() { //bruh
 				$("#paragraph" + i).append(textArray.getRandom()) 
 			}
 			
-			if (j != wordsPer) {
+			if (j != (wordsPer + 1)) {
 				var puncRand = Math.random();
 				
 				if (puncRand < 0.0625) {
@@ -68,14 +68,19 @@ function start() { //bruh
 						
 						if (puncRand > 0.02) {
 							$("#paragraph" + i).append(". ");
-							isNewSentence = true;
 						} else {
-							$("#paragraph" + i).append("? ");
-							isNewSentence = true;
+							puncRand = Math.random();
+							
+							if (puncRand > 0.85) {
+								$("#paragraph" + i).append("? ");
+							} else {
+								$("#paragraph" + i).append("! ");
+							}
 						}
 					} else {
 						$("#paragraph" + i).append(", ");
 					}
+					isNewSentence = true;
 					
 				} else {
 					$("#paragraph" + i).append(" ");
@@ -86,7 +91,7 @@ function start() { //bruh
 		}
 		
 		puncRand = Math.random();
-					
+		
 		if (puncRand > 0.02) {
 			document.getElementById("paragraph" + i).innerHTML = $("#paragraph" + i).html().slice(0, -1) + ".";
 			isNewSentence = true;
