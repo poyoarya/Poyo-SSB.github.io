@@ -24,10 +24,10 @@ function isNumberKey(evt){ //prevents typing of non-numbers in the thingledingle
 }
 
 var textArray = [ //define gibberish
-				//	"yee",
+					"a"
 				//	"bruh",
-					"ayy",
-					"lmao"
+				//	"ayy",
+				//	"lmao"
 				];
 
 function start() { //bruh
@@ -57,30 +57,42 @@ function start() { //bruh
 				$("#paragraph" + i).append(textArray.getRandom()) 
 			}
 			
-			var puncRand = Math.random();
-			
-			if (puncRand < 0.0625) {
-				puncRand = Math.random();
+			if (j != wordsPer) {
+				var puncRand = Math.random();
 				
-				if (puncRand < 0.8) {
+				if (puncRand < 0.0625) {
 					puncRand = Math.random();
 					
-					if (puncRand > 0.05) {
-						$("#paragraph" + i).append(". ");
-						isNewSentence = true;
+					if (puncRand < 0.8) {
+						puncRand = Math.random();
+						
+						if (puncRand > 0.02) {
+							$("#paragraph" + i).append(". ");
+							isNewSentence = true;
+						} else {
+							$("#paragraph" + i).append("? ");
+							isNewSentence = true;
+						}
 					} else {
-						$("#paragraph" + i).append("? ");
-						isNewSentence = true;
+						$("#paragraph" + i).append(", ");
 					}
+					
 				} else {
-					$("#paragraph" + i).append(", ");
+					$("#paragraph" + i).append(" ");
 				}
-				
-			} else {
-				$("#paragraph" + i).append(" ");
 			}
 			
 			isNewSentence = false;
+		}
+		
+		puncRand = Math.random();
+					
+		if (puncRand > 0.02) {
+			document.getElementById("paragraph" + i).innerHTML = $("#paragraph" + i).html().slice(0, -1) + ".";
+			isNewSentence = true;
+		} else {
+			document.getElementById("paragraph" + i).innerHTML = $("#paragraph" + i).html().slice(0, -1) + "?";
+			isNewSentence = true;
 		}
 	}
 }
