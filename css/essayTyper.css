@@ -9,11 +9,15 @@ html {
 	font-family: openSans;
 }
 
+td {
+	width:260px;
+}
+
 #options {
-	width: 550px;
+	width: 1300px;
 	position:relative;
-	margin-left: -275px;
-	left: 50%;
+	margin-left: -650px;
+	left:50%;
 }
 
 ::selection {
@@ -72,7 +76,7 @@ body {
 	background: linear-gradient(to bottom, hsla(360, 0%, 80%, 1) 5%, hsla(360, 0%, 100%, 1) 100%);
 }
 
-#words,#paragraphs,#variance {
+input {
 	font-size: 120%;
 	display: inline-block;
 	vertical-align: top;
