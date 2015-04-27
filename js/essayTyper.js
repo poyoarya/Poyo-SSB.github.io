@@ -49,8 +49,13 @@ function start() { //bruh
 	$("#center").empty();
 	
 	for (i = 0; i < paragraphs; i++) {
-		$("#center").append("<p class=\"p\" id=\"paragraph" + i + "\">lol poo</p>");
+		$("#center").append("<p class=\"p\" id=\"paragraph" + i + "\"></p>");
 		
+		for (j = 0; j < sentences; j++) {
+			var length = randomIntFromInterval(sentences - sentenceVariance, sentences + sentenceVariance);
+			
+			
+		}
 	}
 }
 
