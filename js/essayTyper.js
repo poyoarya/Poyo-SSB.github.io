@@ -31,11 +31,13 @@ var textArray = [ //define gibberish
 				];
 
 function start() { //bruh
-	var paragraphs = $("#paragraphs").val();
-	var sentences = $("#sentences").val();
-	var sentenceVariance = $("#sentenceVariance").val();
-	var words = $("#words").val();
-	var wordVariance = $("#wordVariance").val();
+	var paragraphs = parseInt($("#paragraphs").val(),10);
+	var sentences = parseInt($("#sentences").val(),10);
+	var sentenceVariance = parseInt($("#sentenceVariance").val(),10);
+	var words = parseInt($("#words").val(),10);
+	var wordVariance = parseInt($("#wordVariance").val(),10);
+	
+	var isNewSentence = true;
 	
 	if (words - wordVariance < 1) {
 		window.alert("The variance factor should not exceed the number of words!");
@@ -50,12 +52,21 @@ function start() { //bruh
 	
 	for (i = 0; i < paragraphs; i++) {
 		$("#center").append("<p class=\"p\" id=\"paragraph" + i + "\"></p>");
+		var finalSentence = randomIntFromInterval(sentences - sentenceVariance, sentences + sentenceVariance);
 		
-		for (j = 0; j < sentences; j++) {
-			var length = randomIntFromInterval(sentences - sentenceVariance, sentences + sentenceVariance);
+		for (j = 0; j < finalSentence; j++) {
+			var finalWords = randomIntFromInterval(words - wordVariance, words + wordVariance);
 			
+			for (k = 0; k < finalWords; k++) {
+				$("#paragraph" + i).append(textArray.getRandom());
+				
+				isNewSentence = false;
+			}
 			
+			isNewSentence = true;
 		}
+		
+		isNewSentence = true;
 	}
 }
 
