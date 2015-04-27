@@ -31,6 +31,31 @@ var textArray = [ //define gibberish
 				];
 
 function start() { //bruh
+	var paragraphs = $("#paragraphs").val();
+	var sentences = $("#sentences").val();
+	var sentenceVariance = $("#sentenceVariance").val();
+	var words = $("#words").val();
+	var wordVariance = $("#wordVariance").val();
+	
+	if (words - wordVariance < 1) {
+		window.alert("The variance factor should not exceed the number of words!");
+		return;
+	} 
+	if (sentences - sentenceVariance < 1) {
+		window.alert("The variance factor should not exceed the number of sentences!");
+		return;
+	}
+	
+	$("#center").empty();
+	
+	for (i = 0; i < paragraphs; i++) {
+		$("#center").append("<p class=\"p\" id=\"paragraph" + i + "\">lol poo</p>");
+		
+	}
+}
+
+/* 
+function start() { //bruh
 	var paragraphs = document.getElementById("paragraphs").valueAsNumber;
 	var words = document.getElementById("words").valueAsNumber;
 	var variance = document.getElementById("variance").valueAsNumber;
@@ -101,3 +126,4 @@ function start() { //bruh
 		}
 	}
 }
+*/
