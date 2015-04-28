@@ -24,10 +24,51 @@ function isNumberKey(evt){ //prevents typing of non-numbers in the thingledingle
 }
 
 var textArray = [ //define gibberish
-					"a"
-				//	"bruh",
-				//	"ayy",
-				//	"lmao"
+				//	"a"
+					"so",
+					"has",
+					"anyone",
+					"ever",
+					"been",
+					"as",
+					"far",
+					"as",
+					"to",
+					"inevitable",
+					"representing",
+					"represents",
+					"death",
+					"without",
+					"presents",
+					"shocking",
+					"story",
+					"unknowingly",
+					"formula",
+					"heroic",
+					"hero",
+					"tragic",
+					"defined",
+					"such",
+					"by",
+					"portrays",
+					"portrayal",
+					"tragic",
+					"prophecy",
+					"shown",
+					"his",
+					"her",
+					"doom",
+					"faces",
+					"live",
+					"life",
+					"in",
+					"shame",
+					"personal",
+					"flaws",
+					"god",
+					"religious",
+					"untimely",
+					"demise"
 				];
 
 function start() { //bruh
@@ -82,17 +123,17 @@ function start() { //bruh
 			
 			var puncRand = Math.random();
 				
-			if (puncRand > 0.1) {
-				$("#paragraph" + i).append(". ");
-			} else {
-				puncRand = Math.random();
-				
-				if (puncRand > 0.4) {
-					$("#paragraph" + i).append("! ");
+				if (puncRand > 0.1) {
+					$("#paragraph" + i).append(". ");
 				} else {
-					$("#paragraph" + i).append("? ");
+					puncRand = Math.random();
+					
+					if (puncRand > 0.4) {
+						$("#paragraph" + i).append("! ");
+					} else {
+						$("#paragraph" + i).append("? ");
+					}
 				}
-			}
 		}
 	}
 }
