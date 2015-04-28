@@ -52,21 +52,48 @@ function start() { //bruh
 	
 	for (i = 0; i < paragraphs; i++) {
 		$("#center").append("<p class=\"p\" id=\"paragraph" + i + "\"></p>");
-		var finalSentence = randomIntFromInterval(sentences - sentenceVariance, sentences + sentenceVariance);
+		var finalSentences = randomIntFromInterval(sentences - sentenceVariance, sentences + sentenceVariance);
 		
-		for (j = 0; j < finalSentence; j++) {
+		for (j = 0; j < finalSentences; j++) {
 			var finalWords = randomIntFromInterval(words - wordVariance, words + wordVariance);
 			
 			for (k = 0; k < finalWords; k++) {
-				$("#paragraph" + i).append(textArray.getRandom());
+				if (k != finalWords - 1) {
+					if (isNewSentence) {
+						$("#paragraph" + i).append(textArray.getRandom().capitalizeFirstLetter() + " ");
+					} else {
+						$("#paragraph" + i).append(textArray.getRandom() + " ");
+					}
+				} else {
+					if (isNewSentence) {
+						$("#paragraph" + i).append(textArray.getRandom().capitalizeFirstLetter());
+					} else {
+						$("#paragraph" + i).append(textArray.getRandom());
+					}
+				}
+				
+				
+				$("#paragraph" + i).append();
 				
 				isNewSentence = false;
 			}
-			
+			 
 			isNewSentence = true;
+			
+			var puncRand = Math.random();
+				
+			if (puncRand > 0.1) {
+				$("#paragraph" + i).append(". ");
+			} else {
+				puncRand = Math.random();
+				
+				if (puncRand > 0.4) {
+					$("#paragraph" + i).append("! ");
+				} else {
+					$("#paragraph" + i).append("? ");
+				}
+			}
 		}
-		
-		isNewSentence = true;
 	}
 }
 
