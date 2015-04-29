@@ -65,10 +65,13 @@ var textArray = [ //define gibberish
 					"shame",
 					"personal",
 					"flaws",
-					"god",
+					"God",
 					"religious",
 					"untimely",
-					"demise"
+					"demise",
+					"thus",
+					"traits",
+					"ergo"
 				];
 
 function start() { //bruh
