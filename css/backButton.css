@@ -5,18 +5,22 @@
 }
 
 #backButton {
-	font-size: 120%;
-	box-shadow: inset 0px 2px 2px 0px white;
-	stroke: 2px solid hsla(360, 0%, 70%, 1);
-	fill: linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 80%, 1) 100%);
+	stroke: hsla(360, 0%, 70%, 1);
+	stroke-width: 3px;
+	 stroke-linejoin: miter;
+	 stroke-miterlimit: 100.0;
+	fill: url(#idleFill);
 }
 
 #backButton:hover {
-	fill: blue;
+	stroke: hsla(360, 0%, 80%, 1);
+	stroke-width: 3px;
+	fill: url(#hoverFill);
 }
 
 #backButton:active {
-	fill: green;
+	stroke-width: 3px;
+	fill: url(#activeFill);
 }
 
 /*
