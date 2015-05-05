@@ -24,7 +24,8 @@ function isNumberKey(evt){ //prevents typing of non-numbers in the thingledingle
 }
 
 var textArray = [ //define gibberish
-				//	"a"
+					"a",
+					"an",
 					"so",
 					"has",
 					"anyone",
@@ -32,8 +33,21 @@ var textArray = [ //define gibberish
 					"been",
 					"as",
 					"far",
+					"for",
 					"as",
 					"to",
+					"lot",
+					"nobody",
+					"can",
+					"time",
+					"good",
+					"some",
+					"could",
+					"new",
+					"because",
+					"due to",
+					"given",
+					"our",
 					"inevitable",
 					"representing",
 					"represents",
@@ -71,7 +85,15 @@ var textArray = [ //define gibberish
 					"demise",
 					"thus",
 					"traits",
-					"ergo"
+					"ergo",
+					"humanity",
+					"day",
+					"fact",
+					"case",
+					"point",
+					"problem",
+					"copy",
+					"severe"
 				];
 
 function start() { //bruh
@@ -103,10 +125,20 @@ function start() { //bruh
 			
 			for (k = 0; k < finalWords; k++) {
 				if (k != finalWords - 1) {
-					if (isNewSentence) {
-						$("#paragraph" + i).append(textArray.getRandom().capitalizeFirstLetter() + " ");
+					var puncRand = Math.random();
+					
+					if (puncRand < 0.05) {
+						if (isNewSentence) {
+							$("#paragraph" + i).append(textArray.getRandom().capitalizeFirstLetter() + ", ");
+						} else {
+							$("#paragraph" + i).append(textArray.getRandom() + ", ");
+						}
 					} else {
-						$("#paragraph" + i).append(textArray.getRandom() + " ");
+						if (isNewSentence) {
+							$("#paragraph" + i).append(textArray.getRandom().capitalizeFirstLetter() + " ");
+						} else {
+							$("#paragraph" + i).append(textArray.getRandom() + " ");
+						}
 					}
 				} else {
 					if (isNewSentence) {
