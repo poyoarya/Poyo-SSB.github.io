@@ -31,7 +31,7 @@ var term2 = [
 					"fraudulent",
 					"disturbing me",
 					"is a total scrub",
-					"prevented me from winning",
+					"preventing me from winning",
 					"upside-down",
 					"violating the rules",
 					"too smelly for me",
