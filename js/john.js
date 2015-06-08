@@ -9,7 +9,15 @@ var term1 = [
 					"the crowd was",
 					"my opponent was",
 					"my chair is",
-					"his controller is"
+					"his controller is",
+					"Meta Knight is",
+					"Roy's wavedash is",
+					"my mother is",
+					"my brain is",
+					"my 3DS is",
+					"Nintendo was",
+					"my Twitter followers were",
+					"my eyes are"
 ];
 
 var term2 = [
@@ -18,7 +26,16 @@ var term2 = [
 					"laggy",
 					"hacked",
 					"too loud",
-					"uncomfortable"
+					"uncomfortable",
+					"OP", 
+					"fraudulent",
+					"disturbing me",
+					"is a total scrub",
+					"prevented me from winning",
+					"upside-down",
+					"violating the rules",
+					"too smelly for me",
+					"totally spooking me out"
 ];
 
 function getRandInt(min, max) {
