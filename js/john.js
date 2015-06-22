@@ -22,8 +22,7 @@ var term1 = [
 					"the commentators are",
 					"the music was",
 					"Final Destination is",
-					"Reggie Fils-Aimé is",
-					"I'm"
+					"Reggie Fils-Aimé is"
 ];
 
 var term2 = [
