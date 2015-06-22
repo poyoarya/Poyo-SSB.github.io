@@ -19,9 +19,9 @@ var term1 = [
 					"my Twitter followers were",
 					"my eyes are",
 					"the DLC is",
-					"the commentators",
-					"the music",
-					"Final Destination"
+					"the commentators are",
+					"the music was",
+					"Final Destination is"
 ];
 
 var term2 = [
