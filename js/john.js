@@ -21,7 +21,8 @@ var term1 = [
 					"the DLC is",
 					"the commentators are",
 					"the music was",
-					"Final Destination is"
+					"Final Destination is",
+					"Reggie Fils-Aimé is"
 ];
 
 var term2 = [
@@ -42,7 +43,8 @@ var term2 = [
 					"totally spooking me out",
 					"unnecessarily rude",
 					"making funny faces at me",
-					"trash-talking mid-match"
+					"trash-talking mid-match",
+					"running a company for 16 hours a day"
 ];
 
 function getRandInt(min, max) {
