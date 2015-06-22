@@ -93,7 +93,8 @@ var textArray = [ //define gibberish
 					"point",
 					"problem",
 					"copy",
-					"severe"
+					"severe",
+					"given"
 				];
 
 function start() { //bruh

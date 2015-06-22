@@ -17,7 +17,11 @@ var term1 = [
 					"my 3DS is",
 					"Nintendo was",
 					"my Twitter followers were",
-					"my eyes are"
+					"my eyes are",
+					"the DLC is",
+					"the commentators",
+					"the music",
+					"Final Destination"
 ];
 
 var term2 = [
@@ -31,11 +35,14 @@ var term2 = [
 					"fraudulent",
 					"disturbing me",
 					"is a total scrub",
-					"preventing me from winning",
+					"making me SD",
 					"upside-down",
 					"violating the rules",
 					"too smelly for me",
-					"totally spooking me out"
+					"totally spooking me out",
+					"unnecessarily rude",
+					"making funny faces at me",
+					"trash-talking mid-match"
 ];
 
 function getRandInt(min, max) {
