@@ -26,8 +26,6 @@ function getRandInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-document.getElementById("button").addEventListener("click", generate);
-
 function generate() {
 	var part1 = greeting[getRandInt(0,greeting.length-1)]
 	var part2 = adressment[getRandInt(0,adressment.length-1)]

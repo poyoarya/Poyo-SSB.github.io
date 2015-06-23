@@ -1,20 +1,3 @@
-@font-face {
-    font-family: openSans;
-    src: url(OpenSans.ttf);
-}
-
-html {
-	background-color: black;
-	color: white;
-	font-family: openSans;
-	padding: 50;
-}
-
-::selection {
-	background: white;
-	color: black;
-}
-
 body {
 	margin: 15px;
 }
