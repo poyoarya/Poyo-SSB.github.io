@@ -25,8 +25,9 @@ var subjects = [
 				"my skills were",
 				"the stream was",
 				"Sakurai was",
-				"Brawl is"
-				"Melee is"
+				"Brawl is",
+				"Melee is",
+				"reddit is"
 ];
 
 var problems = [
