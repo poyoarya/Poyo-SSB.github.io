@@ -20,7 +20,7 @@ var subjects = [
 				"the commentators are",
 				"the music was",
 				"Final Destination is",
-				"Reggie Fils-Aimé is",
+				"Reggie Fils-Aim\u00e9 is",
 				"the venue is",
 				"my skills were",
 				"the stream was",
