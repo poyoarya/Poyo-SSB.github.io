@@ -110,9 +110,7 @@ function generate() {
 	var finalSubject = subjects[getRandInt(0,subjects.length-1)]
 	var finalProblem = problems[getRandInt(0,problems.length-1)]
 	
-	if (Math.random() > 0.0125) {
-		document.getElementById("text").innerHTML = "I lost because " + finalSubject + " " +  finalProblem + ".";
-	}
+	document.getElementById("text").innerHTML = "I lost because " + finalSubject + " " +  finalProblem + ".";
 }
 
 generate();
