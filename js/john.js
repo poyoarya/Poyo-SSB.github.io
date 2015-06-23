@@ -72,7 +72,11 @@ function generate() {
 	var part1 = term1[getRandInt(0,term1.length-1)]
 	var part2 = term2[getRandInt(0,term2.length-1)]
 	
-	document.getElementById("text").innerHTML = "I lost because " + part1 + " " +  part2 + ".";
+	if (Math.random() > 0.0125) {
+		document.getElementById("text").innerHTML = "I lost because " + part1 + " " +  part2 + ".";
+	} else {
+		document.getElementById("text").innerHTML = "I lost because " + part1 + " " +  part2 + " again.";
+	}
 }
 
 generate();
