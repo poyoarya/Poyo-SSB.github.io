@@ -27,7 +27,10 @@ var subjects = [
 				"Sakurai was",
 				"Brawl is",
 				"Melee is",
-				"reddit is"
+				"reddit is",
+				"the ledge was",
+				"my foot is",
+				"the c-stick was",
 ];
 
 var problems = [
@@ -40,7 +43,7 @@ var problems = [
 				"OP", 
 				"fraudulent",
 				"disturbing me",
-				"is a total scrub",
+				"a total scrub",
 				"making me SD",
 				"upside-down",
 				"violating the rules",
@@ -66,7 +69,13 @@ var problems = [
 				"using custom moves",
 				"reminding me of my ex",
 				"really annoying",
-				"tired"
+				"tired",
+				"a big gimmick",
+				"kinda sweaty",
+				"drunk",
+				"only using one move",
+				"not listening to me",
+				"sleeping"
 ];
 
 function getRandInt(min, max) {
