@@ -20,8 +20,11 @@ body {
 
 div {
 	display: inline-block;
-	width: 400px;
-	height: 440px;
+	width: 512px;
+	height: 512px;
+}
+
+#neither {
 }
 
 /*

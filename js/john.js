@@ -50,7 +50,8 @@ var term2 = [
 				"not fair",
 				"way better than my character",
 				"speaking Japanese",
-				"too bright"
+				"too bright",
+				"nerfed"
 ];
 
 function getRandInt(min, max) {
