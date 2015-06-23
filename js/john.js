@@ -104,8 +104,6 @@ function getRandInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-document.getElementById("button").addEventListener("click", generate);
-
 function generate() {
 	var finalSubject = subjects[getRandInt(0,subjects.length-1)]
 	var finalProblem = problems[getRandInt(0,problems.length-1)]
