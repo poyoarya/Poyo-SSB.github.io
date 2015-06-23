@@ -75,7 +75,9 @@ var problems = [
 				"drunk",
 				"only using one move",
 				"not listening to me",
-				"sleeping"
+				"sleeping",
+				"cheap",
+				"terrible for my character"
 ];
 
 function getRandInt(min, max) {
