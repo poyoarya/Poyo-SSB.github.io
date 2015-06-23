@@ -32,6 +32,7 @@ div {
 		text-shadow:0px 1px 0px hsla(360, 0%, 80%, 1);
 		border:2px solid hsla(360, 0%, 80%, 1);
 		background:linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 90%, 1) 100%);
+		cursor: pointer;
 	}
 
 	.button:active {

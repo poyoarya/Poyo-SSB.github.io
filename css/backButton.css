@@ -2,13 +2,14 @@
 	position: fixed;
 	left: 10px;
 	bottom: 10px;
+	cursor: pointer;
 }
 
 #backButton {
 	stroke: hsla(360, 0%, 70%, 1);
 	stroke-width: 3px;
-	 stroke-linejoin: miter;
-	 stroke-miterlimit: 100.0;
+	stroke-linejoin: miter;
+	stroke-miterlimit: 100.0;
 	fill: url(#idleFill);
 }
 
