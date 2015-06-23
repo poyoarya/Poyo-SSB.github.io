@@ -47,7 +47,7 @@ var subjects = [
 				"the hotel is",
 				"my Playstation is",
 				"my mother's basement is",
-				"USA is",
+				"the USA is",
 				"my IQ is",
 				"the posts on Miiverse are",
 				"tap jump was"
