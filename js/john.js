@@ -25,7 +25,8 @@ var subjects = [
 				"my skills were",
 				"the stream was",
 				"Sakurai was",
-				""
+				"Brawl is"
+				"Melee is"
 ];
 
 var problems = [
@@ -59,7 +60,12 @@ var problems = [
 				"not good enough",
 				"busy making a gfycat",
 				"too small",
-				"on a bad day"
+				"on a bad day",
+				"sandbagging",
+				"using custom moves",
+				"reminding me of my ex",
+				"really annoying",
+				"tired"
 ];
 
 function getRandInt(min, max) {
