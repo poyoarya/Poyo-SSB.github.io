@@ -1,6 +1,4 @@
-var part1, part2, part3, part4, part5;
-
-var term1 = [
+var subjects = [
 				"my controller is",
 				"the sun was",
 				"my hands were",
@@ -30,7 +28,7 @@ var term1 = [
 				""
 ];
 
-var term2 = [
+var problems = [
 				"in my eyes",
 				"broken",
 				"laggy",
@@ -59,7 +57,9 @@ var term2 = [
 				"nerfed",
 				"garbage",
 				"not good enough",
-				"busy making a gfycat"
+				"busy making a gfycat",
+				"too small",
+				"on a bad day"
 ];
 
 function getRandInt(min, max) {
@@ -69,13 +69,11 @@ function getRandInt(min, max) {
 document.getElementById("button").addEventListener("click", generate);
 
 function generate() {
-	var part1 = term1[getRandInt(0,term1.length-1)]
-	var part2 = term2[getRandInt(0,term2.length-1)]
+	var finalSubject = subjects[getRandInt(0,subjects.length-1)]
+	var finalProblem = problems[getRandInt(0,problems.length-1)]
 	
 	if (Math.random() > 0.0125) {
-		document.getElementById("text").innerHTML = "I lost because " + part1 + " " +  part2 + ".";
-	} else {
-		document.getElementById("text").innerHTML = "I lost because " + part1 + " " +  part2 + " again.";
+		document.getElementById("text").innerHTML = "I lost because " + finalSubject + " " +  finalProblem + ".";
 	}
 }
 
