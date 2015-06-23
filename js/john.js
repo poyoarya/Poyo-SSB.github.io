@@ -22,7 +22,12 @@ var term1 = [
 				"the commentators are",
 				"the music was",
 				"Final Destination is",
-				"Reggie Fils-Aimé is"
+				"Reggie Fils-Aimé is",
+				"the venue is",
+				"my skills were",
+				"the stream was",
+				"Sakurai was",
+				""
 ];
 
 var term2 = [
@@ -51,7 +56,10 @@ var term2 = [
 				"way better than my character",
 				"speaking Japanese",
 				"too bright",
-				"nerfed"
+				"nerfed",
+				"garbage",
+				"not good enough",
+				"busy making a gfycat"
 ];
 
 function getRandInt(min, max) {
