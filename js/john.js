@@ -40,7 +40,8 @@ var subjects = [
 				"the USA is",
 				"my IQ is",
 				"the posts on Miiverse are",
-				"tap jump was"
+				"tap jump was",
+				"all 1540 matchups are"
 ];
 
 var problems = [
@@ -86,7 +87,8 @@ var problems = [
 				"not listening to me",
 				"sleeping",
 				"cheap",				"terrible for my character",				"rated a 7.8 on IGN",				"using infinite combos",				"taunting",				"cheating",				"different because of the update",				"using glitches",				"not what I meant to hit",				"a timed match",				"using better moves than me",				"using motion controls",				"sitting slightly closer to the screen",				"not wearing his glasses",				"sober",				"using items",				"not letting me grab him",				"shielding too much",				"air dodging",				"rolling",				"pausing mid-match",				"saving replays",				"ethically superior to me",				"only using the A button",				"only using the B button",				"Reggie Fils-Aim\u00e9",				"picking stages that I don't like",				"bad and should feel bad",				"low on batteries",				"cold",				"sticky",				"blocking the screen",				"walking in front of the screen",				"tangling my controller cable",				"incapable of melting steel beams",				"too attractive",				"too fast",				"using an ugly alternative costume",				"using counters too much",				"spamming PK Fire",
-				"my b"
+				"my b",
+				"really hard to remember!"
 ];
 
 function getRandInt(min, max) {
