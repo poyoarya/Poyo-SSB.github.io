@@ -18,3 +18,12 @@ body {
 	width: 100%;
 	height: 100%;
 }
+
+#credits {
+	position: fixed;
+	font-size: 140%;
+	bottom: 0px;
+	width: 600px;
+	margin-left: -300px;
+	left: 50%;
+}

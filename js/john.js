@@ -41,7 +41,8 @@ var subjects = [
 				"my IQ is",
 				"the posts on Miiverse are",
 				"tap jump was",
-				"all 1540 matchups are"
+				"all 1540 matchups are",
+				"Jigglypuff was"
 ];
 
 var problems = [
