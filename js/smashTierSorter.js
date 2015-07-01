@@ -1,4 +1,4 @@
-var chars = [
+var chars4 = [
 	"Mario",
 	"Luigi",
 	"Peach",
