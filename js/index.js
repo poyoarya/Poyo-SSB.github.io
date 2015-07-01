@@ -35,24 +35,12 @@ for (var i = 0; i < buttons.length; i++) {
 	var rgb = hexToRgb(buttons[i].getAttribute("buttoncolor"));
 	var hsl = rgbToHsl(rgb[0], rgb[1], rgb[2]);
 	if (rgb[1] > 153) {
-		sheet.innerHTML = sheet.innerHTML + "#" + buttons[i].id + " {color: black; text-shadow:0px 1px 0px hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);border:2px solid hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 100%)}\r" + 
-											"#" + buttons[i].id + ":hover {text-shadow:0px 1px 0px hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);border:2px solid hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+18) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-2) + "%, 1) 100%)}\r" + 
-											"#" + buttons[i].id + ":active {text-shadow:0px 1px 0px hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);	border:2px solid hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 100%)}\r"
+		sheet.innerHTML = sheet.innerHTML + "#" + buttons[i].id + " {color: black;background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 100%)}\r" + 
+											"#" + buttons[i].id + ":hover {background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+18) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-2) + "%, 1) 100%)}\r" + 
+											"#" + buttons[i].id + ":active {background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 100%)}\r"
 	} else {
-		sheet.innerHTML = sheet.innerHTML + "#" + buttons[i].id + " {color: white; text-shadow:0px 1px 0px hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);border:2px solid hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 100%)}\r" + 
-											"#" + buttons[i].id + ":hover {text-shadow:0px 1px 0px hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);border:2px solid hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+18) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-2) + "%, 1) 100%)}\r" + 
-											"#" + buttons[i].id + ":active {text-shadow:0px 1px 0px hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);	border:2px solid hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-20) + "%, 1);background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 100%)}\r"
+		sheet.innerHTML = sheet.innerHTML + "#" + buttons[i].id + " {color: white;background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 100%)}\r" + 
+											"#" + buttons[i].id + ":hover {background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+18) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-2) + "%, 1) 100%)}\r" + 
+											"#" + buttons[i].id + ":active {background:linear-gradient(to bottom, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]-10) + "%, 1) 5%, hsla(" + hsl[0] + ", " + hsl[1] + "%, " + (hsl[2]+10) + "%, 1) 100%)}\r"
 	}
 }
-
-$('.button').hover(function () {
-	$(this).stop().animate({
-		'margin': 20,
-		'padding': 15
-	}, 100, "swing");
-}, function () {
-	$(this).stop().animate({
-		'margin': 25,
-		'padding': 10
-	}, 100, "swing");
-});

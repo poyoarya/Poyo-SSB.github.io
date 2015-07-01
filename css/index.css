@@ -23,7 +23,6 @@ body {
 	height: 200px;
 	padding: 10px;
 	border-radius: 35px;
-	box-shadow:inset 0px 2px 2px 0px white;
 	position: relative;
     left: 0px;
     top: 0px;
@@ -33,6 +32,7 @@ body {
 
 .buttonHeader {
 	font-size: 150%;
+	font-weight: bold;
 	margin: 0px 0px 10px 0px;
 	text-align: center;
 }
