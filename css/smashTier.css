@@ -2,13 +2,27 @@ body {
 	margin: 0;
 }
 
-div {
-	display: inline-block;
-	width: 512px;
+#container {
 	height: 512px;
 }
 
+#option1:hover, #option2:hover {
+	-webkit-filter: contrast(0.8) brightness(1.2);
+	filter: contrast(0.8) brightness(1.2);
+}
+
+#option1:active, #option2:active {
+	-webkit-filter: contrast(0.8) brightness(0.8);
+	filter: contrast(0.8) brightness(0.8);
+}
+
 #neither {
+	margin-top: 158px;
+	margin-bottom: 158px;
+}
+
+#flairText {
+	font-size: 350%;
 }
 
 /*
