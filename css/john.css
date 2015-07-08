@@ -21,9 +21,8 @@ body {
 
 #credits {
 	position: fixed;
-	font-size: 140%;
 	bottom: 0px;
-	width: 600px;
-	margin-left: -300px;
+	width: 400px;
+	margin-left: -200px;
 	left: 50%;
 }
