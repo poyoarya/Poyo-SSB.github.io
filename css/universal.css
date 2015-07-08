@@ -1,6 +1,8 @@
 @font-face {
-    font-family: openSans;
-    src: url(OpenSans.ttf);
+    font-family: 'openSans';
+    src: url(OpenSans.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html {
@@ -8,6 +10,10 @@ html {
 	color: white;
 	font-family: openSans;
 	padding: 20px;
+}
+
+a {
+	display: inline-block;
 }
 
 ::selection {
