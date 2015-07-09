@@ -25,6 +25,11 @@
 	font-weight: bold;
 	font-size: 350%;
 	margin-top: 10px;
+	margin-bottom: 0px;
+}
+#question {
+	font-size: 150%;
+	margin-top: 0px;
 	margin-bottom: 10px;
 }
 

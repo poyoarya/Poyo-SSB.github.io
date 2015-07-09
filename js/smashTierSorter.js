@@ -30,7 +30,7 @@ var ssb4 = {
 		{name: "Mewtwo", url: "mewtwo", score: 0},
 		{name: "Mii Brawler", url: "miiBrawler", score: 0},
 		{name: "Mii Gunner", url: "miiGunner", score: 0},
-		{name: "Mii Swordfighter", url: "miiSwordfighter", score: 0},
+		{name: "Mii Swordsman", url: "miiSwordsman", score: 0},
 		{name: "Mr. Game & Watch", url: "mrGameAndWatch", score: 0},
 		{name: "Ness", url: "ness", score: 0},
 		{name: "Olimar", url: "olimar", score: 0},
@@ -71,6 +71,8 @@ function setCharacter(game, slot, id) {
 	document.getElementById("option" + slot + "Label").innerHTML = name;
 }
 
+var questionNumber = 1;
+
 var option1 = ssb4.chars[0];
 var option2 = ssb4.chars[1];
 var pos1 = 0;
@@ -98,8 +100,10 @@ function select(slot) {
 		output();
 		return;
 	}
-	setCharacter("ssb4", 1, pos2);
+	setCharacter("ssb4", 1, pos1);
 	setCharacter("ssb4", 2, pos2);
+	questionNumber++;
+	document.getElementById("questionNumber").innerHTML = questionNumber;
 }
 
 function output() {
