@@ -1,23 +1,3 @@
-/*
-function setCharacter(game, slot, name) {
-	var index = window[game].chars.indexOf(name);
-	if (typeof window[game] != "object") {
-		throw "SmashError: \"" + game + "\" is not a game";
-	}
-	if (slot > 2 || slot < 1) {
-		throw "SmashError: Only supported slots are 1 and 2";			
-	}
-	if (index == -1) {
-		throw "SmashError: Character name not found";
-	}
-	url = window[game].urls[index]
-	document.getElementById("option" + slot).setAttribute("src", "css/images/smashTierSorter/" + game + url + ".png");
-	document.getElementById("option" + slot + "Label").innerHTML = name;
-}
-*/
-
-var finished = false;
-
 var ssb4 = {
 	chars: [
 		{name: "Bowser", url: "bowser", score: 0},
@@ -78,11 +58,50 @@ var ssb4 = {
 	]
 }
 
-var option1 = $scope.foodArray[0];
-var option2 = $scope.foodArray[1];
+function setCharacter(game, slot, id) {
+	name = window[game].chars[id].name;
+	url = window[game].chars[id].url;
+	if (typeof window[game] != "object") {
+		throw "SmashError: \"" + game + "\" is not a game";
+	}
+	if (slot > 2 || slot < 1) {
+		throw "SmashError: Only supported slots are 1 and 2";			
+	}
+	document.getElementById("option" + slot).setAttribute("src", "css/images/smashTierSorter/" + game + url + ".png");
+	document.getElementById("option" + slot + "Label").innerHTML = name;
+}
+
+var option1 = ssb4.chars[0];
+var option2 = ssb4.chars[1];
 var pos1 = 0;
 var pos2 = 1;
 
-function sort() {
-	//rad!
+setCharacter("ssb4", 1, pos1);
+setCharacter("ssb4", 2, pos2);
+
+function select(slot) {
+	if (slot == 1) {
+		ssb4.chars[pos1].score++;
+	} else if (slot == 2) {
+		ssb4.chars[pos2].score++;
+	}
+	
+	if (pos2 < ssb4.chars.length - 1) {
+		pos2++;
+		option2 = ssb4.chars[pos2];
+	} else if (pos1 < ssb4.chars.length - 2) {
+		pos1++;
+		pos2 = 1 + pos1;
+		option1 = ssb4.chars[pos1]
+		option2 = ssb4.chars[pos2]
+	} else {
+		output();
+		return;
+	}
+	setCharacter("ssb4", 1, pos2);
+	setCharacter("ssb4", 2, pos2);
+}
+
+function output() {
+	//yee
 }

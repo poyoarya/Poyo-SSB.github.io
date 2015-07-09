@@ -4,13 +4,13 @@
 		<center>
 			<p id="flairText">Who's better?</p>
 			<p id="labels">
-				<div id="option1Label">Mario</div>
-				<div id="neitherLabel">Neither</div>
-				<div id="option2Label">Pikachu</div>
+				<div id="option1Label" onclick="select(1)"></div>
+				<div id="neitherLabel" onclick="select(0)">Neither</div>
+				<div id="option2Label" onclick="select(2)"></div>
 			</p>
-			<img id="option1" src="css/images/smashTierSorter/ssb4mario.png">
-			<img id="neither" src="css/images/smashTierSorter/neither.png">
-			<img id="option2" src="css/images/smashTierSorter/ssb4pikachu.png">
+			<img id="option1" onclick="select(1)">
+			<img id="neither" onclick="select(0)" src="css/images/smashTierSorter/neither.png">
+			<img id="option2" onclick="select(2)">
 		</center>
 		<a href="index.html">
 			<svg id="backButtonContainer" width="75" height="70">
