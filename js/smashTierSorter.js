@@ -1,3 +1,29 @@
+Element.prototype.remove = function() {
+	this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+	for(var i = this.length - 1; i >= 0; i--) {
+		if(this[i] && this[i].parentElement) {
+			this[i].parentElement.removeChild(this[i]);
+		}
+	}
+}
+
+var finished = false;
+
+window.addEventListener("keydown", function(e) {
+	if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+		e.preventDefault();
+	}
+	if (e.keyCode === 37) {
+		select(1);
+	} else if (e.keyCode === 39 || e.keyCode === 49 || e.keyCode === 50 || e.keyCode === 51 || e.keyCode === 52) {
+		select(2);
+	} else if (e.keyCode === 38 || e.keyCode === 40) {
+		select(0);
+	}
+}, false);
+
 var ssb4 = {
 	chars: [
 		{name: "Bowser", url: "bowser", score: 0},
@@ -54,7 +80,7 @@ var ssb4 = {
 		{name: "Wii Fit Trainer", url: "wiiFitTrainer", score: 0},
 		{name: "Yoshi", url: "yoshi", score: 0},
 		{name: "Zelda", url: "zelda", score: 0},
-		{name: "Zero Suit Samus", url: "samus", score: 0}
+		{name: "Zero Suit Samus", url: "zeroSuitSamus", score: 0}
 	]
 }
 
@@ -107,5 +133,48 @@ function select(slot) {
 }
 
 function output() {
-	//yee
+	window.finalArray = ssb4.chars;
+	finalArray.sort(function(a,b) {
+		return b.score - a.score;  
+	});
+	
+	window.finalArray = finalArray.map(function(item, i) {
+		if (i > 0) {
+			var prevItem = finalArray[i - 1];
+			if (prevItem.score == item.score) {
+				item.rank = prevItem.rank;
+			} else {
+				item.rank = i + 1;
+			}
+		} else {
+			item.rank = 1;
+		}
+		
+		return item;
+	});
+	
+	document.getElementById("flairText").innerHTML = "The results...";
+
+	document.getElementById("question").remove();
+	document.getElementById("labels").remove();
+	document.getElementById("option1Label").remove();
+	document.getElementById("option2Label").remove();
+	document.getElementById("neitherLabel").remove();
+	document.getElementById("option1").remove();
+	document.getElementById("option2").remove();
+	document.getElementById("neither").remove();
+	
+	for (var i = 0; i < finalArray.length; i++) {
+		var row = document.createElement("tr");
+		row.setAttribute("id","row" + i);
+		var col1 = document.createElement("td");
+		var col2 = document.createElement("td");
+		col1.setAttribute("class","numberRow");
+		col2.setAttribute("class","nameRow");
+		col1.appendChild(document.createTextNode(finalArray[i].rank + "."));
+		col2.appendChild(document.createTextNode(finalArray[i].name));
+		row.appendChild(col1);
+		row.appendChild(col2);
+		document.getElementById("results").appendChild(row);
+	}
 }
