@@ -12,15 +12,17 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
 var finished = false;
 
 window.addEventListener("keydown", function(e) {
-	if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-		e.preventDefault();
-	}
-	if (e.keyCode === 37) {
-		select(1);
-	} else if (e.keyCode === 39 || e.keyCode === 49 || e.keyCode === 50 || e.keyCode === 51 || e.keyCode === 52) {
-		select(2);
-	} else if (e.keyCode === 38 || e.keyCode === 40) {
-		select(0);
+	if (!finished) {
+		if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+			e.preventDefault();
+		}
+		if (e.keyCode === 37) {
+			select(1);
+		} else if (e.keyCode === 39 || e.keyCode === 49 || e.keyCode === 50 || e.keyCode === 51 || e.keyCode === 52) {
+			select(2);
+		} else if (e.keyCode === 38 || e.keyCode === 40) {
+			select(0);
+		}
 	}
 }, false);
 
@@ -177,4 +179,6 @@ function output() {
 		row.appendChild(col2);
 		document.getElementById("results").appendChild(row);
 	}
+	
+	finished = true;
 }

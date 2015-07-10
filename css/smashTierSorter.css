@@ -48,11 +48,15 @@
 	top:150px;
 }
 
-ol {
-	width: 350px;
+table {
+	font-size: 200%;
 }
 
-li {
-	text-align: left;
-	font-size: 180%;
+.numberRow {
+	width: 50px;
+	padding: 0px;
+}
+
+.nameRow {
+	
 }
