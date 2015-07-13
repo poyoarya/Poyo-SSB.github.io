@@ -18,7 +18,7 @@ window.addEventListener("keydown", function(e) {
 		}
 		if (e.keyCode === 37) {
 			select(1);
-		} else if (e.keyCode === 39 || e.keyCode === 49 || e.keyCode === 50 || e.keyCode === 51 || e.keyCode === 52) {
+		} else if (e.keyCode === 39) {
 			select(2);
 		} else if (e.keyCode === 38 || e.keyCode === 40) {
 			select(0);
@@ -95,7 +95,7 @@ function setCharacter(game, slot, id) {
 	if (slot > 2 || slot < 1) {
 		throw "SmashError: Only supported slots are 1 and 2";			
 	}
-	document.getElementById("option" + slot).setAttribute("src", "css/images/smashTierSorter/" + game + url + ".png");
+	document.getElementById("option" + slot).setAttribute("src", "css/images/smashTierSorter/" + game + "/" + game + url + ".png");
 	document.getElementById("option" + slot + "Label").innerHTML = name;
 }
 
