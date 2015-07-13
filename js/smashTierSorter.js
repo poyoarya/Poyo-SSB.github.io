@@ -95,7 +95,7 @@ function setCharacter(game, slot, id) {
 	if (slot > 2 || slot < 1) {
 		throw "SmashError: Only supported slots are 1 and 2";			
 	}
-	document.getElementById("option" + slot).setAttribute("src", "css/images/smashTierSorter/" + game + "/" + url + ".png");
+	document.getElementById("option" + slot).setAttribute("src", "css/images/smashTierSorter/" + game + "/"  + url + ".png");
 	document.getElementById("option" + slot + "Label").innerHTML = name;
 }
 
