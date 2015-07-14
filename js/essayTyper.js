@@ -94,7 +94,26 @@ var textArray = [ //define gibberish
 					"problem",
 					"copy",
 					"severe",
-					"given"
+					"given",
+					"moreover",
+					"yet",
+					"specifically",
+					"hence",
+					"ergo",
+					"vivid",
+					"depict",
+					"depicts",
+					"embodies",
+					"manifest",
+					"manifestation",
+					"whereas",
+					"next",
+					"once",
+					"certainly",
+					"phenomenal",
+					"prowess",
+					"invoke",
+					"instill"
 				];
 
 function start() { //bruh
