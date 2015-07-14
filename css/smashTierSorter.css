@@ -34,8 +34,8 @@
 }
 
 #option1Label, #option2Label, #neitherLabel {
-	font-size: 240%;
 	display: inline-block;
+	font-size: 240%;
 }
 
 #option1Label, #option2Label {
@@ -48,6 +48,12 @@
 	top:150px;
 }
 
+#gameSelect {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	font-size: 180%;
+}
+
 table {
 	font-size: 200%;
 }
@@ -57,6 +63,44 @@ table {
 	padding: 0px;
 }
 
-.nameRow {
-	
+.button {
+	font-size: 180%;
+	font-weight: bold;
+	display: block;
+	vertical-align: top;
+	width: 80px;
+	height: 40px;
+	padding: 0;
+	border-radius: 10px;
+	line-height:35px;
+	margin: 10px;
+	color: black;
+	background:linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 80%, 1) 100%);
+	cursor: pointer;
+}
+
+.button:hover {
+	background:linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 90%, 1) 100%);
+}
+
+.button:active {
+	background:linear-gradient(to bottom, hsla(360, 0%, 90%, 1) 5%, hsla(360, 0%, 100%, 1) 100%);
+}
+
+select {
+	font-size: 120%;
+	display: inline-block;
+	vertical-align: top;
+	width: 180px;
+	height: 40px;
+	padding: 0;
+	border-radius: 10px;
+	box-shadow: inset 0px 2px 2px 0px white;
+	position: relative;
+	margin: 10px;
+	line-height:0px;
+	color: black;
+	border: none;
+	background: linear-gradient(to bottom, hsla(360, 0%, 100%, 1) 5%, hsla(360, 0%, 80%, 1) 100%);
+	text-align: center;
 }

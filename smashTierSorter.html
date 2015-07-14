@@ -15,6 +15,13 @@
 			
 			<table id="results">
 			</table>
+			
+			<p id="gameSelect">Game:</p>
+			<select id="gameDropdown">
+				<option value="ssb4">Smash 4</option>
+				<option value="ssbm">Melee</option>
+			</select>
+			<div onclick="reset(document.getElementById('gameDropdown').value)" class="button">Go!</div>
 		</center>
 		<a href="index.html">
 			<svg id="backButtonContainer" width="75" height="70">

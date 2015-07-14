@@ -1,6 +1,11 @@
-Element.prototype.remove = function() {
-	this.parentElement.removeChild(this);
+Element.prototype.hide = function() {
+	this.setAttribute("style","display: none;");
 }
+
+Element.prototype.show = function() {
+	this.setAttribute("style","");
+}
+
 NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
 	for(var i = this.length - 1; i >= 0; i--) {
 		if(this[i] && this[i].parentElement) {
@@ -86,6 +91,36 @@ var ssb4 = {
 	]
 }
 
+var ssbm = {
+	chars: [
+		{name: "Bowser", url: "bowser", score: 0},
+		{name: "Captain Falcon", url: "captainFalcon", score: 0},
+		{name: "Donkey Kong", url: "donkeyKong", score: 0},
+		{name: "Dr. Mario", url: "drMario", score: 0},
+		{name: "Falco", url: "falco", score: 0},
+		{name: "Fox", url: "fox", score: 0},
+		{name: "Ganondorf", url: "ganondorf", score: 0},
+		{name: "Ice Climbers", url: "iceClimbers", score: 0},
+		{name: "Jigglypuff", url: "jigglypuff", score: 0},
+		{name: "Kirby", url: "kirby", score: 0},
+		{name: "Link", url: "link", score: 0},
+		{name: "Luigi", url: "luigi", score: 0},
+		{name: "Mario", url: "mario", score: 0},
+		{name: "Marth", url: "marth", score: 0},
+		{name: "Mewtwo", url: "mewtwo", score: 0},
+		{name: "Mr. Game & Watch", url: "mrGameAndWatch", score: 0},
+		{name: "Ness", url: "ness", score: 0},
+		{name: "Peach", url: "peach", score: 0},
+		{name: "Pichu", url: "pichu", score: 0},
+		{name: "Pikachu", url: "pikachu", score: 0},
+		{name: "Roy", url: "roy", score: 0},
+		{name: "Samus", url: "samus", score: 0},
+		{name: "Yoshi", url: "yoshi", score: 0},
+		{name: "Young Link", url: "youngLink", score: 0},
+		{name: "Zelda", url: "zelda", score: 0}
+	]
+}
+
 function setCharacter(game, slot, id) {
 	name = window[game].chars[id].name;
 	url = window[game].chars[id].url;
@@ -99,43 +134,33 @@ function setCharacter(game, slot, id) {
 	document.getElementById("option" + slot + "Label").innerHTML = name;
 }
 
-var questionNumber = 1;
-
-var option1 = ssb4.chars[0];
-var option2 = ssb4.chars[1];
-var pos1 = 0;
-var pos2 = 1;
-
-setCharacter("ssb4", 1, pos1);
-setCharacter("ssb4", 2, pos2);
-
 function select(slot) {
 	if (slot == 1) {
 		ssb4.chars[pos1].score++;
 	} else if (slot == 2) {
-		ssb4.chars[pos2].score++;
+		window[currentGame].chars[pos2].score++;
 	}
 	
-	if (pos2 < ssb4.chars.length - 1) {
+	if (pos2 < window[currentGame].chars.length - 1) {
 		pos2++;
-		option2 = ssb4.chars[pos2];
-	} else if (pos1 < ssb4.chars.length - 2) {
+		option2 = window[currentGame].chars[pos2];
+	} else if (pos1 < window[currentGame].chars.length - 2) {
 		pos1++;
 		pos2 = 1 + pos1;
-		option1 = ssb4.chars[pos1]
-		option2 = ssb4.chars[pos2]
+		option1 = window[currentGame].chars[pos1]
+		option2 = window[currentGame].chars[pos2]
 	} else {
 		output();
 		return;
 	}
-	setCharacter("ssb4", 1, pos1);
-	setCharacter("ssb4", 2, pos2);
+	setCharacter(currentGame, 1, pos1);
+	setCharacter(currentGame, 2, pos2);
 	questionNumber++;
 	document.getElementById("questionNumber").innerHTML = questionNumber;
 }
 
 function output() {
-	window.finalArray = ssb4.chars;
+	window.finalArray = window[currentGame].chars;
 	finalArray.sort(function(a,b) {
 		return b.score - a.score;  
 	});
@@ -157,14 +182,14 @@ function output() {
 	
 	document.getElementById("flairText").innerHTML = "The results...";
 
-	document.getElementById("question").remove();
-	document.getElementById("labels").remove();
-	document.getElementById("option1Label").remove();
-	document.getElementById("option2Label").remove();
-	document.getElementById("neitherLabel").remove();
-	document.getElementById("option1").remove();
-	document.getElementById("option2").remove();
-	document.getElementById("neither").remove();
+	document.getElementById("question").hide();
+	document.getElementById("labels").hide();
+	document.getElementById("option1Label").hide();
+	document.getElementById("option2Label").hide();
+	document.getElementById("neitherLabel").hide();
+	document.getElementById("option1").hide();
+	document.getElementById("option2").hide();
+	document.getElementById("neither").hide();
 	
 	for (var i = 0; i < finalArray.length; i++) {
 		var row = document.createElement("tr");
@@ -180,5 +205,43 @@ function output() {
 		document.getElementById("results").appendChild(row);
 	}
 	
-	finished = true;
+	window.finished = true;
 }
+
+var questionNumber = 1;
+
+function reset(game) {
+	while (document.getElementById("results").hasChildNodes()) {   
+		document.getElementById("results").removeChild(document.getElementById("results").firstChild);
+	}
+	
+	document.getElementById("question").show();
+	document.getElementById("labels").show();
+	document.getElementById("option1Label").show();
+	document.getElementById("option2Label").show();
+	document.getElementById("neitherLabel").show();
+	document.getElementById("option1").show();
+	document.getElementById("option2").show();
+	document.getElementById("neither").show();
+	
+	window.currentGame = game;
+	if ((!window.finished) && (questionNumber != 1)) {
+		var conf = confirm("Are you sure you want to reset? You're not done with this one!");
+		if (conf != true) {
+			return;
+		}
+	}
+	
+	window.finished = false;
+	questionNumber = 1;
+
+	window.option1 = window[game].chars[0];
+	window.option2 = window[game].chars[1];
+	window.pos1 = 0;
+	window.pos2 = 1;
+
+	setCharacter(game, 1, pos1);
+	setCharacter(game, 2, pos2);
+}
+
+reset("ssb4");
