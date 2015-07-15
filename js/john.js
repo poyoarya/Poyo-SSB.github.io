@@ -51,7 +51,9 @@ var subjects = [
 	"all 1540 matchups are",
 	"Jigglypuff was",
 	"I was",
-	"PAC-MAN was"
+	"PAC-MAN was",
+	"Alex Strife is",
+	"my scarf is"
 ];
 
 var problems = [
