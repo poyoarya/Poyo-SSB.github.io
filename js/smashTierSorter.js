@@ -122,6 +122,23 @@ var ssbm = {
 	]
 }
 
+var ssb64 = {
+	chars: [
+		{name: "Captain Falcon", url: "captainFalcon", score: 0},
+		{name: "Donkey Kong", url: "donkeyKong", score: 0},
+		{name: "Fox", url: "fox", score: 0},
+		{name: "Jigglypuff", url: "jigglypuff", score: 0},
+		{name: "Kirby", url: "kirby", score: 0},
+		{name: "Link", url: "link", score: 0},
+		{name: "Luigi", url: "luigi", score: 0},
+		{name: "Mario", url: "mario", score: 0},
+		{name: "Ness", url: "ness", score: 0},
+		{name: "Pikachu", url: "pikachu", score: 0},
+		{name: "Samus", url: "samus", score: 0},
+		{name: "Yoshi", url: "yoshi", score: 0}
+	]
+}
+
 function setCharacter(game, slot, id) {
 	name = window[game].chars[id].name;
 	url = window[game].chars[id].url;
