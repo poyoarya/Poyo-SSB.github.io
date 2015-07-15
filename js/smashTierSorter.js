@@ -115,6 +115,7 @@ var ssbm = {
 		{name: "Pikachu", url: "pikachu", score: 0},
 		{name: "Roy", url: "roy", score: 0},
 		{name: "Samus", url: "samus", score: 0},
+		{name: "Sheik", url: "sheik", score: 0},
 		{name: "Yoshi", url: "yoshi", score: 0},
 		{name: "Young Link", url: "youngLink", score: 0},
 		{name: "Zelda", url: "zelda", score: 0}
