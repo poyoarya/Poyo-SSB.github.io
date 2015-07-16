@@ -236,7 +236,7 @@ function output() {
 		
 		return item;
 	});
-	
+
 	document.getElementById("flairText").innerHTML = "The results...";
 
 	document.getElementById("question").hide();
