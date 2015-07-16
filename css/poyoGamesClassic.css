@@ -1,0 +1,73 @@
+body {
+	margin: 0;
+}
+
+#buttonContainer {
+	width:1200px;
+	height: 370px;
+	margin-top: -185px; 
+	margin-left: -600px; 
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+
+.button {
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+	height: 300px;
+	padding: 10px;
+	border-radius: 50px;
+	position: relative;
+    left: 0px;
+    top: 0px;
+	margin: 25px;
+	cursor: pointer;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+.buttonHeader {
+	font-size: 230%;
+	font-weight: bold;
+	margin: 0px 0px 10px 0px;
+	text-align: center;
+	color: black;
+	cursor: pointer;
+}
+.buttonBody {
+	margin: 10px 0px 10px 0px;
+	font-size: 130%;
+	color: black;
+}
+
+#cookieClicker {
+	background:linear-gradient(to bottom, hsla(12, 100%, 60%, 1) 5%, hsla(12, 100%, 40%, 1) 100%);
+}
+#cookieClicker:hover {
+	background:linear-gradient(to bottom, hsla(12, 100%, 68%, 1) 5%, hsla(12, 100%, 48%, 1) 100%);
+}
+#cookieClicker:active {
+	background:linear-gradient(to bottom, hsla(12, 100%, 40%, 1) 5%, hsla(12, 100%, 60%, 1) 100%);
+}
+
+#potatoBaker {
+	background:linear-gradient(to bottom, hsla(105, 100%, 60%, 1) 5%, hsla(105, 100%, 40%, 1) 100%);
+}
+#potatoBaker:hover {
+	background:linear-gradient(to bottom, hsla(105, 100%, 68%, 1) 5%, hsla(105, 100%, 48%, 1) 100%);
+}
+#potatoBaker:active {
+	background:linear-gradient(to bottom, hsla(105, 100%, 40%, 1) 5%, hsla(105, 100%, 60%, 1) 100%);
+}
+
+#ADVENTURE {
+	background:linear-gradient(to bottom, hsla(203, 100%, 60%, 1) 5%, hsla(203, 100%, 40%, 1) 100%);
+}
+#ADVENTURE:hover {
+	background:linear-gradient(to bottom, hsla(203, 100%, 68%, 1) 5%, hsla(203, 100%, 48%, 1) 100%);
+}
+#ADVENTURE:active {
+	background:linear-gradient(to bottom, hsla(203, 100%, 40%, 1) 5%, hsla(203, 100%, 60%, 1) 100%);
+}
