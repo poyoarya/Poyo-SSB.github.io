@@ -4,11 +4,16 @@ $(window).keydown(function(e) {
 		adventure.variables[adventure.inputVariable] = $("#input").val();
 		adventure.inputVariable = null;
 		$("#input").remove();
+		window[adventure.callingFunction]();
+		adventure.callingFunction = null;
 	}
 });
 
+
+
 var adventure = {
 	inputVariable: null,
+	callingFunction: null,
 	
 	colors: {
 		black: "#000000",
@@ -44,7 +49,7 @@ var adventure = {
 		}
 	},
 	
-	pause: function() {
+	pause: function(f) {
 	},
 	
 	clear: function() {
@@ -53,14 +58,24 @@ var adventure = {
 		}
 	},
 	
-	input: function(variable) {
+	input: function(variable, f) {
 		$("#console").children().last().append(
-			$("<input id=\"input\" wrap=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" rows=\"1\" maxlength=\"32\" focus></input>")
+			$("<input id=\"input\" wrap=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" rows=\"1\" maxlength=\"32\"></input>")
 		);
 		this.inputVariable = variable;
+		this.callingFunction = f;
 	},
 	
-	variables: {
-		
-	}
+	variables: {}
 }
+
+function begin() {
+	adventure.print(true, "what is your name, fraud?: ");
+	adventure.input("name", "uguu");
+}
+
+function uguu() {
+	adventure.print(true, "well, you're a fraud, ");
+	adventure.print(false, adventure.variables.name, "cyan");
+	adventure.print(false, ". ayy lmao");
+} 
