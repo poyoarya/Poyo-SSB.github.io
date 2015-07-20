@@ -9,7 +9,11 @@ $(window).keydown(function(e) {
 	}
 });
 
-
+var focus = setInterval(function() {
+	if ($("#input").length != 0) {
+		$("#input").focus()
+	}
+}, 10);
 
 var adventure = {
 	inputVariable: null,
@@ -70,12 +74,13 @@ var adventure = {
 }
 
 function begin() {
-	adventure.print(true, "what is your name, fraud?: ");
-	adventure.input("name", "uguu");
+	adventure.print(true, "What is your name, fraud?: ");
+	
+	adventure.input("name", "insultFraud");
 }
 
-function uguu() {
-	adventure.print(true, "well, you're a fraud, ");
+function insultFraud() {
+	adventure.print(true, "Well, you're a fraud, ");
 	adventure.print(false, adventure.variables.name, "cyan");
 	adventure.print(false, ". ayy lmao");
 } 
