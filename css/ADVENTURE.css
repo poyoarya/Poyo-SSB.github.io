@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'videoTerminalScreen';
+    src: url(VideoTerminalScreen.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+	background-color: black;
+	color: white;
+	font-family: videoTerminalScreen;
+	padding: 5px;
+	white-space: nowrap
+}
+
+p {
+	margin: 0;
+}
+
+input {
+	font-family: videoTerminalScreen;
+	resize: none;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	height: 16px;
+	width: 256px;
+	vertical-align: bottom;
+	outline: none;
+	background-color: black;
+	color: #C0C0C0;
+	font-size: 16px;
+}
+
+::selection {
+	background: white;
+	color: black;
+}
