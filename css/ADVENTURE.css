@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'videoTerminalScreen';
+    src: url(VideoTerminalScreen.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+	margin: 0;
+}
+
+body {
+	overflow: hidden;
+}
+
+html {
+	background-color: black;
+	color: white;
+	font-family: videoTerminalScreen;
+	font-size: 200%;
+	padding: 5px;
+}
+
+#console {
+	position: absolute;
+	bottom: 44px;
+}
+
+#arrow {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: 12px;
+}
+
+input {
+	font-family: videoTerminalScreen;
+	font-size: 100%;
+	resize: none;
+	margin: 0 12px 12px;
+	border: 0;
+	padding: 0;
+	height: 32px;
+	width: calc(100% - 16px);
+	position: absolute;
+	bottom: 0;
+	left: 16px;
+	outline: none;
+	background-color: black;
+	color: white;
+}
+
+::selection {
+	background: white;
+	color: black;
+}
