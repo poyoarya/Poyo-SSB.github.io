@@ -65,13 +65,15 @@ function mainMenu() {
 		adventure.print(false, "A.D.V.E.N.T.U.R.E.", "yellow");
 		adventure.print(false, "-=-=-=-=-=-=-=-=-", "green");
 	adventure.newLine();
-	adventure.print(true, "-=-=-=-=-=-=-=-=-", "green");
-	
-	/*
-	cecho {red}1.{white} Create game {\n}
-	cecho {red}2.{white} Load Game {\n}
-	cecho {red}3.{white} Delete Game {\n}
-	cecho {red}4.{white} Options {\n}
-	cecho {red}5.{white} Quit {\n}
-	*/
+	adventure.print(true, "1. ", "red");
+		adventure.print(false, "Create game");
+	adventure.print(true, "2. ", "red");
+		adventure.print(false, "Load game");
+	adventure.print(true, "3. ", "red");
+		adventure.print(false, "Delete game");
+	adventure.print(true, "4. ", "red");
+		adventure.print(false, "Options");
+	adventure.print(true, "5. ", "red");
+		adventure.print(false, "Back to Poyo's Stuff!");
+	adventure.newLine();
 }
