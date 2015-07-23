@@ -1,5 +1,3 @@
-Array.prototype.contains = function(string)
-
 var focus = setInterval(function() {
 	if ($("#input").prop("disabled") == false) {
 		$("#input").focus();
@@ -15,14 +13,19 @@ $(window).keydown(function(e) {
 		adventure.print(true, ">" + $("#input").val().trim());
 		
 		adventure.lastInput = $("#input").val().trim().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").split(" ");
+		$("#input").prop("value", "");
+		
+		//====================//
 		
 		if (adventure.location == "mainMenu") {
-			adventure.last
+			if (adventure.lastInput.indexOf("1") == 0) {
+				alert("1")
+			}
 		} else {
 			alert("I'm sorry, there's been an error!");
 		}
 		
-		$("#input").prop("value", "");
+		//====================//
 	}
 })
 
@@ -98,6 +101,34 @@ var adventure = {
 			"NAH",
 			"NA",
 			"NON"
+		],
+		menuCreate: [
+			"CREATE",
+			"MAKE",
+			"1"
+		],
+		menuLoad: [
+			"LOAD",
+			"READ",
+			"2"
+		],
+		menuDelete: [
+			"DELETE",
+			"DESTROY",
+			"REMOVE",
+			"3"
+		],
+		menuOption: [
+			"OPTIONS",
+			"SETTINGS",
+			"4"
+		]
+		menuQuit: [
+			"QUIT",
+			"BACK",
+			"POYO",
+			"GAME",
+			"4"
 		]
 	}
 }
