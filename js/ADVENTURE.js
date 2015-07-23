@@ -1,3 +1,5 @@
+Array.prototype.contains = function(string)
+
 var focus = setInterval(function() {
 	if ($("#input").prop("disabled") == false) {
 		$("#input").focus();
@@ -11,7 +13,15 @@ $(window).keydown(function(e) {
 		($("#input").prop("value") != "")
 	) {
 		adventure.print(true, ">" + $("#input").val().trim());
-		adventure.interpret($("#input").prop("value"));
+		
+		adventure.lastInput = $("#input").val().trim().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").split(" ");
+		
+		if (adventure.location == "mainMenu") {
+			adventure.last
+		} else {
+			alert("I'm sorry, there's been an error!");
+		}
+		
 		$("#input").prop("value", "");
 	}
 })
@@ -55,12 +65,47 @@ var adventure = {
 		$("#console").append($("</br>"));
 	},
 	
-	interpret: function(input) {
-		finalInput = input.trim();
+	disableInput: function() {
+		$("#arrow").hide()
+		$("#input").prop("disabled", true)
+	},
+	
+	enableInput: function() {
+		$("#arrow").show()
+		$("#input").prop("disabled", false)
+	},
+	
+	lastInput: "",
+	location: "",
+	/*
+		"mainMenu"
+	*/
+	
+	words: {
+		yes: [
+			"YES",
+			"YE",
+			"Y",
+			"YEAH",
+			"YEA",
+			"YA",
+			"SI",
+			"OUI"
+		],
+		no: [
+			"NO",
+			"N",
+			"NAH",
+			"NA",
+			"NON"
+		]
 	}
 }
 
 function mainMenu() {
+	adventure.location = "mainMenu";
+	adventure.disableInput();
+	
 	adventure.print(true, "-=-=-=-=-=-=-=-=-", "green");
 		adventure.print(false, "A.D.V.E.N.T.U.R.E.", "yellow");
 		adventure.print(false, "-=-=-=-=-=-=-=-=-", "green");
@@ -76,4 +121,6 @@ function mainMenu() {
 	adventure.print(true, "5. ", "red");
 		adventure.print(false, "Back to Poyo's Stuff!");
 	adventure.newLine();
+	
+	adventure.enableInput();
 }
