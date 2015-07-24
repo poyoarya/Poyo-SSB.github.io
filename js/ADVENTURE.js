@@ -1,15 +1,18 @@
 Array.prototype.contains = function(wordSet) {
+	var input = [];
+	for (i = 0; i < this.length; i++) {
+		input[i] = this[i].toUpperCase();
+	}
 	var finalWordSet = wordSet.split(".");
 	if (finalWordSet.length != 2) {
 		throw "ADVENTUREError: wordSet must be two long";
 		return;
 	}
-	for (i=0; i > adventure.words[finalWordSet[0]][finalWordSet[1]].length; i++) {
-		if ( != -1) {
-			return this.toUpperCase().indexOf(adventure.words[finalWordSet[0]][finalWordSet[1]][i]);
+	for (i = 0; i < adventure.words[finalWordSet[0]][finalWordSet[1]].length; i++) {
+		if (input.indexOf(adventure.words[finalWordSet[0]][finalWordSet[1]][i]) != -1) {
+			return input.indexOf(adventure.words[finalWordSet[0]][finalWordSet[1]][i]);
 		}
 	}
-	return -1;
 }
 
 var focus = setInterval(function() {
@@ -32,15 +35,15 @@ $(window).keydown(function(e) {
 		//====================//
 		
 		if (adventure.isMainMenu == true) {
-			if (adventure.lastInput.contains("menu.menuCreate", 0) == true) {
-				alert("1")
-			} else if (adventure.lastInput.contains("menu.menuLoad", 0) == true) {
+			if (adventure.lastInput.contains("menu.menuCreate") == 0) {
+				alert("fine you stupid asshole")
+			} else if (adventure.lastInput.contains("menu.menuLoad") == 0) {
 				alert("2")
-			} else if (adventure.lastInput.contains("menu.menuDelete", 0) == true) {
+			} else if (adventure.lastInput.contains("menu.menuDelete") == 0) {
 				alert("3")
-			} else if (adventure.lastInput.contains("menu.menuOption", 0) == true) {
+			} else if (adventure.lastInput.contains("menu.menuOption") == 0) {
 				alert("4")
-			} else if (adventure.lastInput.contains("menu.menuQuit", 0) == true) {
+			} else if (adventure.lastInput.contains("menu.menuQuit") == 0) {
 				alert("5")
 			}
 		} else {
@@ -152,7 +155,7 @@ var adventure = {
 				"BACK",
 				"POYO",
 				"GAME",
-				"4"
+				"5"
 			]
 		}
 	}
