@@ -27,7 +27,7 @@ $(window).keydown(function(e) {
 		($("#input").prop("disabled") == false)	&&
 		($("#input").prop("value") != "")
 	) {
-		adventure.print(true, ">" + $("#input").val().trim());
+		adventure.print(true, ">" + $("#input").val().trim(), "white");
 		
 		adventure.lastInput = $("#input").val().trim().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").split(" ");
 		$("#input").prop("value", "");
@@ -36,15 +36,15 @@ $(window).keydown(function(e) {
 		
 		if (adventure.isMainMenu == true) {
 			if (adventure.lastInput.contains("menu.menuCreate") == 0) {
-				alert("fine you stupid asshole")
 			} else if (adventure.lastInput.contains("menu.menuLoad") == 0) {
-				alert("2")
 			} else if (adventure.lastInput.contains("menu.menuDelete") == 0) {
-				alert("3")
 			} else if (adventure.lastInput.contains("menu.menuOption") == 0) {
-				alert("4")
-			} else if (adventure.lastInput.contains("menu.menuQuit") == 0) {
-				alert("5")
+			} else if (adventure.lastInput.contains("menu.menuQuit") == 0 || adventure.lastInput.contains("menu.menuQuit") == 1) {
+			} else {
+				adventure.newLine();
+				adventure.print(true, "That's not a command I can recognise!");
+				adventure.newLine();
+				mainMenu();
 			}
 		} else {
 			alert("I'm sorry, there's been an error!");
