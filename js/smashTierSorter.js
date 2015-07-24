@@ -193,7 +193,7 @@ function setCharacter(game, slot, id) {
 
 function select(slot) {
 	if (slot == 1) {
-		ssb4.chars[pos1].score++;
+		window[currentGame].chars[pos1].score++;
 	} else if (slot == 2) {
 		window[currentGame].chars[pos2].score++;
 	}
