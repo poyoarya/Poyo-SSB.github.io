@@ -40,6 +40,10 @@ $(window).keydown(function(e) {
 			} else if (adventure.lastInput.contains("menu.menuDelete") == 0) {
 			} else if (adventure.lastInput.contains("menu.menuOption") == 0) {
 			} else if (adventure.lastInput.contains("menu.menuQuit") == 0 || adventure.lastInput.contains("menu.menuQuit") == 1) {
+				adventure.newLine()
+				adventure.print(true, "noooooooooooooooooooo");
+				window.location.href = "index.html";
+				console.warn("How the hell are you reading this?");
 			} else {
 				adventure.newLine();
 				adventure.print(true, "That's not a command I can recognise!");
