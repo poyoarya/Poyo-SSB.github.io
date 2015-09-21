@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<center>
+			<div id="container">
+				<div id="wrapper">
+					<div id="textBlock">
+						<p id="text"></p>
+					</div>
+					<div class="button" onclick="generate();">
+						<p>Generate a new name!</p>
+					</div>
+				</div>
+			</div>
+		</center>
+		<a href="index.html">
+			<svg id="backButtonContainer" width="75" height="70">
+				<defs>
+					<linearGradient id="idleFill" x1="0%" y1="0%" x2="0%" y2="100%">
+						<stop offset="5%" style="stop-color:hsla(360, 0%, 100%, 1);stop-opacity:1" />
+						<stop offset="100%" style="stop-color:hsla(360, 0%, 70%, 1);stop-opacity:1" />
+					</linearGradient>
+					<linearGradient id="hoverFill" x1="0%" y1="0%" x2="0%" y2="100%">
+						<stop offset="5%" style="stop-color:hsla(360, 0%, 100%, 1);stop-opacity:1" />
+						<stop offset="100%" style="stop-color:hsla(360, 0%, 90%, 1);stop-opacity:1" />
+					</linearGradient>
+					<linearGradient id="activeFill" x1="0%" y1="0%" x2="0%" y2="100%">
+						<stop offset="0%" style="stop-color:hsla(360, 0%, 70%, 1);stop-opacity:1" />
+						<stop offset="100%" style="stop-color:hsla(360, 0%, 100%, 1);stop-opacity:1" />
+					</linearGradient>
+				</defs>
+				<path
+				id="backButton"
+				d="m 0,35 30,-25 0,17.5 40,0 0,15 -40,0 0,17.5 z" />
+			</svg>
+		</a>
+	</body>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/universal.css">
+		<link rel="stylesheet" type="text/css" href="css/backButton.css">
+		<link rel="stylesheet" type="text/css" href="css/button.css">
+		<link rel="stylesheet" type="text/css" href="css/ikeaGenerator.css">
+		<script language="javascript" type="text/javascript" src="js/ikeaGenerator.js"></script>
+		<title>Ikea Furniture Generator</title>
+	</head>
+</html>
