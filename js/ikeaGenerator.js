@@ -1367,247 +1367,6 @@ function getRandInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-var beginnings = [
-	"AB",
-	"AD",
-	"AG",
-	"AI",
-	"AK",
-	"AL",
-	"AM",
-	"AN",
-	"AP",
-	"AR",
-	"AS",
-	"AT",
-	"AU",
-	"BA",
-	"BE",
-	"BI",
-	"BJ",
-	"BL",
-	"BO",
-	"BR",
-	"BU",
-	"BY",
-	"BÅ",
-	"BÄ",
-	"BÖ",
-	"CA",
-	"CE",
-	"CH",
-	"CI",
-	"CL",
-	"CY",
-	"DA",
-	"DE",
-	"DI",
-	"DJ",
-	"DO",
-	"DR",
-	"DU",
-	"DV",
-	"DY",
-	"DÅ",
-	"DÄ",
-	"ED",
-	"EF",
-	"EG",
-	"EI",
-	"EK",
-	"EL",
-	"EM",
-	"EN",
-	"EP",
-	"ER",
-	"EV",
-	"EX",
-	"FA",
-	"FE",
-	"FI",
-	"FJ",
-	"FL",
-	"FN",
-	"FO",
-	"FR",
-	"FU",
-	"FY",
-	"FÅ",
-	"FÄ",
-	"FÖ",
-	"GA",
-	"GE",
-	"GI",
-	"GL",
-	"GN",
-	"GO",
-	"GR",
-	"GU",
-	"GY",
-	"GÅ",
-	"GÄ",
-	"GÖ",
-	"HA",
-	"HE",
-	"HJ",
-	"HO",
-	"HU",
-	"HY",
-	"HÅ",
-	"HÄ",
-	"HÖ",
-	"IB",
-	"ID",
-	"IK",
-	"IL",
-	"IM",
-	"IN",
-	"IR",
-	"IS",
-	"IV",
-	"JA",
-	"JE",
-	"JI",
-	"JO",
-	"JU",
-	"JY",
-	"JÄ",
-	"JÖ",
-	"KA",
-	"KE",
-	"KI",
-	"KL",
-	"KN",
-	"KO",
-	"KR",
-	"KU",
-	"KV",
-	"KY",
-	"KÅ",
-	"KÄ",
-	"KÖ",
-	"LA",
-	"LE",
-	"LI",
-	"LJ",
-	"LO",
-	"LU",
-	"LY",
-	"LÅ",
-	"LÄ",
-	"LÖ",
-	"MA",
-	"ME",
-	"MI",
-	"MJ",
-	"MO",
-	"MU",
-	"MY",
-	"MÅ",
-	"MÄ",
-	"MÖ",
-	"NA",
-	"NE",
-	"NI",
-	"NJ",
-	"NO",
-	"NU",
-	"NY",
-	"NÄ",
-	"NÖ",
-	"OB",
-	"OD",
-	"OF",
-	"OL",
-	"OM",
-	"OP",
-	"OR",
-	"OX",
-	"PA",
-	"PE",
-	"PI",
-	"PJ",
-	"PL",
-	"PO",
-	"PR",
-	"PS",
-	"PU",
-	"PY",
-	"PÅ",
-	"PÄ",
-	"RA",
-	"RE",
-	"RI",
-	"RO",
-	"RU",
-	"RÅ",
-	"RÄ",
-	"RÖ",
-	"SA",
-	"SE",
-	"SI",
-	"SJ",
-	"SK",
-	"SL",
-	"SM",
-	"SN",
-	"SO",
-	"SP",
-	"ST",
-	"SU",
-	"SV",
-	"SY",
-	"SÄ",
-	"SÖ",
-	"TA",
-	"TE",
-	"TH",
-	"TI",
-	"TJ",
-	"TO",
-	"TR",
-	"TU",
-	"TV",
-	"TY",
-	"TÅ",
-	"TÄ",
-	"UL",
-	"UN",
-	"UP",
-	"UR",
-	"US",
-	"UT",
-	"UV",
-	"VA",
-	"VE",
-	"VI",
-	"VO",
-	"VR",
-	"VU",
-	"VÅ",
-	"VÄ",
-	"WI",
-	"YN",
-	"YS",
-	"YT",
-	"ZI",
-	"ÅD",
-	"ÅN",
-	"ÅR",
-	"ÅS",
-	"ÄL",
-	"ÄN",
-	"ÄP",
-	"ÄR",
-	"ÄT",
-	"ÖD",
-	"ÖG",
-	"ÖN",
-	"ÖP",
-	"ÖR",
-	"ÖS"
-]
-
 
 
 function generate() {
@@ -1633,19 +1392,54 @@ function generate() {
 		5				75% chance vowel
 		6					20% chance for vaild vowel to follow
 		7						only valid consonant may follow
-		8					80% chance for vaild consonant to follow
-		9						go to line 4
-		10				25% chance consonant
-		11					55% chance for vaild consonant to follow
-		12						go to line 4
-		13					45% chance for vaild vowel to follow
-		14						go to line 6
-		//todo recursion and ending
+		8						if ending
+		9							go to line ACKDUKBUM
+		10						else
+		11							go to line 4
+		12					80% chance for vaild consonant to follow
+		13						if ending
+		14							go to line ACKDUKBUM
+		15						else
+		16						g	o to line 4
+		17				25% chance consonant
+		18					55% chance for vaild consonant to follow
+		19						if ending
+		20							go to line ACKDUKBUM
+		21						else
+		22							go to line 4
+		23					45% chance for vaild vowel to follow
+		24						if ending
+		25							go to line ACKDUKBUM
+		26						else
+		27							go to line 6
+		28	select random ending type
+		29		if ending letter is consonant
+		30 			65% chance two-letter
+		31				only choose combos which start with valid letter
+		32			35% chance one-letter
+		33				only choose ending with valid letter
+		34		if ending letter is vowel
+		35			if ending letter-1 is also vowel
+		36 				65% chance two-letter
+		37					only choose combos which start with valid non-vowel
+		38				35% chance one-letter
+		39					only choose ending with valid non-vowel
+		40			if ending letter-1 is not vowel
+		41 				65% chance two-letter
+		42					15% chance vowel
+		43						choose random two-letter combo that starts with valid vowel
+		44					85% chance consonant
+		45						choose random two-letter combo that starts with valid consonant
+		46				35% chance one-letter
+		47					15% chance vowel
+		48						choose random valid vowel
+		49					85% chance consonant
+		50						choose random valid consonant
 		
-		at 2 letters, 5% chance of ending
-		at 3 letters, 10% chance of ending
-		at 4 letters, 25% chance of ending
-		at 5 letters, 50% chance of ending
+		at 2 letters, 10% chance of ending
+		at 3 letters, 20% chance of ending
+		at 4 letters, 40% chance of ending
+		at 5 letters, 60% chance of ending
 		at 6 letters, 80% chance of ending
 		at 7 letters, 90% chance of ending
 		at 8 letters, 100% chance of ending
