@@ -1414,27 +1414,26 @@ for (var i = 0; i < chars.length; i ++) {
 }
 
 //Combo finder
-
-for (var i = 0; i < ikeas; i ++) {
-	var temp = ikeas[i];
-	for (var k = 0; k < combos.length; k ++) {
-		/*
-		while (temp.search (combos[k].name) !== -1) {
+for (var k = 0; k < combos.length; k ++) {
+	for (var i = 0; i < ikeas.length; i ++) {
+		var temp = ikeas[i];
+		while (temp.search (combos[k].name) != -1) {
 			var spl = temp.split (temp.search (combos[k].name));
-			/*
 			temp = "";
 			for (var e = 0; e < spl.length; e ++) {
 				temp += spl[e];
-			}
-		}
-		*/
-		if (temp.search(combos[k].name) != -1) {
+			}	
 			combos[k].hits ++;
 		}
 	}
+	var node = document.createElement("LI");
+	var textnode = document.createTextNode(combos[k].name + ", " + combos[k].hits.toString ());
+	node.appendChild(textnode);
+	document.getElementById("list").appendChild(node);
+	if (combos[k].hits != 0) {
+		//var textnode = document.createTextNode(combos[k].name + ", " + combos[k].hits.toString ());
+		var node = document.createElement("LI");
+		node.appendChild(textnode);
+		document.getElementById("list").appendChild(node);
+	}
 }
-/*
-for (var i = 0; i < combos.length; i ++) {
-	//console.log (combos[i]);
-}
-*/
