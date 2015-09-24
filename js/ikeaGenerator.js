@@ -1,7 +1,3 @@
-function getRandInt(min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 var ikeas = [
 	"ABSORB",
 	"ADMETE",
@@ -1367,8 +1363,297 @@ var ikeas = [
 	"ÖSTERÖ"
 ]
 
+function getRandInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+var beginnings = [
+	"AB",
+	"AD",
+	"AG",
+	"AI",
+	"AK",
+	"AL",
+	"AM",
+	"AN",
+	"AP",
+	"AR",
+	"AS",
+	"AT",
+	"AU",
+	"BA",
+	"BE",
+	"BI",
+	"BJ",
+	"BL",
+	"BO",
+	"BR",
+	"BU",
+	"BY",
+	"BÅ",
+	"BÄ",
+	"BÖ",
+	"CA",
+	"CE",
+	"CH",
+	"CI",
+	"CL",
+	"CY",
+	"DA",
+	"DE",
+	"DI",
+	"DJ",
+	"DO",
+	"DR",
+	"DU",
+	"DV",
+	"DY",
+	"DÅ",
+	"DÄ",
+	"ED",
+	"EF",
+	"EG",
+	"EI",
+	"EK",
+	"EL",
+	"EM",
+	"EN",
+	"EP",
+	"ER",
+	"EV",
+	"EX",
+	"FA",
+	"FE",
+	"FI",
+	"FJ",
+	"FL",
+	"FN",
+	"FO",
+	"FR",
+	"FU",
+	"FY",
+	"FÅ",
+	"FÄ",
+	"FÖ",
+	"GA",
+	"GE",
+	"GI",
+	"GL",
+	"GN",
+	"GO",
+	"GR",
+	"GU",
+	"GY",
+	"GÅ",
+	"GÄ",
+	"GÖ",
+	"HA",
+	"HE",
+	"HJ",
+	"HO",
+	"HU",
+	"HY",
+	"HÅ",
+	"HÄ",
+	"HÖ",
+	"IB",
+	"ID",
+	"IK",
+	"IL",
+	"IM",
+	"IN",
+	"IR",
+	"IS",
+	"IV",
+	"JA",
+	"JE",
+	"JI",
+	"JO",
+	"JU",
+	"JY",
+	"JÄ",
+	"JÖ",
+	"KA",
+	"KE",
+	"KI",
+	"KL",
+	"KN",
+	"KO",
+	"KR",
+	"KU",
+	"KV",
+	"KY",
+	"KÅ",
+	"KÄ",
+	"KÖ",
+	"LA",
+	"LE",
+	"LI",
+	"LJ",
+	"LO",
+	"LU",
+	"LY",
+	"LÅ",
+	"LÄ",
+	"LÖ",
+	"MA",
+	"ME",
+	"MI",
+	"MJ",
+	"MO",
+	"MU",
+	"MY",
+	"MÅ",
+	"MÄ",
+	"MÖ",
+	"NA",
+	"NE",
+	"NI",
+	"NJ",
+	"NO",
+	"NU",
+	"NY",
+	"NÄ",
+	"NÖ",
+	"OB",
+	"OD",
+	"OF",
+	"OL",
+	"OM",
+	"OP",
+	"OR",
+	"OX",
+	"PA",
+	"PE",
+	"PI",
+	"PJ",
+	"PL",
+	"PO",
+	"PR",
+	"PS",
+	"PU",
+	"PY",
+	"PÅ",
+	"PÄ",
+	"RA",
+	"RE",
+	"RI",
+	"RO",
+	"RU",
+	"RÅ",
+	"RÄ",
+	"RÖ",
+	"SA",
+	"SE",
+	"SI",
+	"SJ",
+	"SK",
+	"SL",
+	"SM",
+	"SN",
+	"SO",
+	"SP",
+	"ST",
+	"SU",
+	"SV",
+	"SY",
+	"SÄ",
+	"SÖ",
+	"TA",
+	"TE",
+	"TH",
+	"TI",
+	"TJ",
+	"TO",
+	"TR",
+	"TU",
+	"TV",
+	"TY",
+	"TÅ",
+	"TÄ",
+	"UL",
+	"UN",
+	"UP",
+	"UR",
+	"US",
+	"UT",
+	"UV",
+	"VA",
+	"VE",
+	"VI",
+	"VO",
+	"VR",
+	"VU",
+	"VÅ",
+	"VÄ",
+	"WI",
+	"YN",
+	"YS",
+	"YT",
+	"ZI",
+	"ÅD",
+	"ÅN",
+	"ÅR",
+	"ÅS",
+	"ÄL",
+	"ÄN",
+	"ÄP",
+	"ÄR",
+	"ÄT",
+	"ÖD",
+	"ÖG",
+	"ÖN",
+	"ÖP",
+	"ÖR",
+	"ÖS"
+]
+
+
+
 function generate() {
-	alert("No.");
+	/* PSEUDOCODE
+		select random beginning, including letters, accents, and dual letter combos (e.g. "sv" and "kv")
+		start counting length flag
+		chance for vowel, chance for consonant
+			chance vowel (80%) if beginning is vowel, chance is only 40%
+				check previous letter and generate only vowels that can follow
+			chance consonant (20%) if beginning is vowel, chance is 60%
+				check previous letter and only generate letter that can follow
+		chance for vowel, chance for consonant
+			chance vowel (35%)
+				check previous letter and generate only vowels that can follow
+			chance consonant (65%)
+				select random letter combo
+	*/
+	/* PSEUDOCODEv2
+		1	select random letter
+		2		if vowel skip to line 6
+		3		if consonant
+		4			select random valid character to follow
+		5				75% chance vowel
+		6					20% chance for vaild vowel to follow
+		7						only valid consonant may follow
+		8					80% chance for vaild consonant to follow
+		9						go to line 4
+		10				25% chance consonant
+		11					55% chance for vaild consonant to follow
+		12						go to line 4
+		13					45% chance for vaild vowel to follow
+		14						go to line 6
+		//todo recursion and ending
+		
+		at 2 letters, 5% chance of ending
+		at 3 letters, 10% chance of ending
+		at 4 letters, 25% chance of ending
+		at 5 letters, 50% chance of ending
+		at 6 letters, 80% chance of ending
+		at 7 letters, 90% chance of ending
+		at 8 letters, 100% chance of ending
+	*/
+	
+	
+	
+	document.getElementById("text").innerHTML = "eek!";
 }
 
 generate();
