@@ -1,4 +1,4 @@
-var ikeas = [
+﻿var ikeas = [
 	"ABSORB",
 	"ADMETE",
 	"AGAM",
@@ -1426,14 +1426,9 @@ for (var k = 0; k < combos.length; k ++) {
 			combos[k].hits ++;
 		}
 	}
-	var node = document.createElement("LI");
-	var textnode = document.createTextNode(combos[k].name + ", " + combos[k].hits.toString ());
-	node.appendChild(textnode);
-	document.getElementById("list").appendChild(node);
 	if (combos[k].hits != 0) {
-		//var textnode = document.createTextNode(combos[k].name + ", " + combos[k].hits.toString ());
-		var node = document.createElement("LI");
-		node.appendChild(textnode);
-		document.getElementById("list").appendChild(node);
+		console.log(combos[k]);
+	} else {
+		console.log("no hits: " + combos[k].name);
 	}
 }
