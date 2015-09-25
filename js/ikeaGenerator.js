@@ -1367,9 +1367,13 @@ function getRandInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+<<<<<<< HEAD
 var endings = [
 	//put all two-letter ending combos here
 ]
+=======
+
+>>>>>>> c3b00925faeb49d517d26bde69bce9ad9e8ac3f6
 
 function generate() {
 	/* PSEUDOCODE
