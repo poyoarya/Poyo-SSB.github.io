@@ -1393,23 +1393,23 @@ function generate() {
 		6					20% chance for vaild vowel to follow
 		7						only valid consonant may follow
 		8						if ending
-		9							go to line ACKDUKBUM
+		9							go to line 28
 		10						else
 		11							go to line 4
 		12					80% chance for vaild consonant to follow
 		13						if ending
-		14							go to line ACKDUKBUM
+		14							go to line 28
 		15						else
 		16						g	o to line 4
 		17				25% chance consonant
 		18					55% chance for vaild consonant to follow
 		19						if ending
-		20							go to line ACKDUKBUM
+		20							go to line 28
 		21						else
 		22							go to line 4
 		23					45% chance for vaild vowel to follow
 		24						if ending
-		25							go to line ACKDUKBUM
+		25							go to line 28
 		26						else
 		27							go to line 6
 		28	select random ending type
