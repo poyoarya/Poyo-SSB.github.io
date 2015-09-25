@@ -1394,19 +1394,54 @@ function generate() {
 		5				75% chance vowel
 		6					20% chance for vaild vowel to follow
 		7						only valid consonant may follow
-		8					80% chance for vaild consonant to follow
-		9						go to line 4
-		10				25% chance consonant
-		11					55% chance for vaild consonant to follow
-		12						go to line 4
-		13					45% chance for vaild vowel to follow
-		14						go to line 6
-		//todo recursion and ending
+		8						if ending
+		9							go to line 28
+		10						else
+		11							go to line 4
+		12					80% chance for vaild consonant to follow
+		13						if ending
+		14							go to line 28
+		15						else
+		16						g	o to line 4
+		17				25% chance consonant
+		18					55% chance for vaild consonant to follow
+		19						if ending
+		20							go to line 28
+		21						else
+		22							go to line 4
+		23					45% chance for vaild vowel to follow
+		24						if ending
+		25							go to line 28
+		26						else
+		27							go to line 6
+		28	select random ending type
+		29		if ending letter is consonant
+		30 			65% chance two-letter
+		31				only choose combos which start with valid letter
+		32			35% chance one-letter
+		33				only choose ending with valid letter
+		34		if ending letter is vowel
+		35			if ending letter-1 is also vowel
+		36 				65% chance two-letter
+		37					only choose combos which start with valid non-vowel
+		38				35% chance one-letter
+		39					only choose ending with valid non-vowel
+		40			if ending letter-1 is not vowel
+		41 				65% chance two-letter
+		42					15% chance vowel
+		43						choose random two-letter combo that starts with valid vowel
+		44					85% chance consonant
+		45						choose random two-letter combo that starts with valid consonant
+		46				35% chance one-letter
+		47					15% chance vowel
+		48						choose random valid vowel
+		49					85% chance consonant
+		50						choose random valid consonant
 		
-		at 2 letters, 5% chance of ending
-		at 3 letters, 10% chance of ending
-		at 4 letters, 25% chance of ending
-		at 5 letters, 50% chance of ending
+		at 2 letters, 10% chance of ending
+		at 3 letters, 20% chance of ending
+		at 4 letters, 40% chance of ending
+		at 5 letters, 60% chance of ending
 		at 6 letters, 80% chance of ending
 		at 7 letters, 90% chance of ending
 		at 8 letters, 100% chance of ending
