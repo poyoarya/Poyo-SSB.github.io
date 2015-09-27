@@ -75,7 +75,10 @@ $(window).keydown(function(e) {
 					" Your arm feels rather tired.",
 					" You can feel the burn.",
 					" It almost looks like your bicep has grown a little.",
-					" You see a bead of sweat roll down your opponent's face."
+					" You see a bead of sweat roll down your opponent's face.",
+					" You hear the wind blowing through the grass.",
+					" You wonder how long this game will last.",
+					" You consider making a funny face."
 				].randomElement());
 			}
 			adventure.print(true, "Opponent flexes.");
@@ -108,7 +111,11 @@ $(window).keydown(function(e) {
 		} else if (adventure.lastInput.contains("commands.quit") == 0) {
 			adventure.newLine();
 			adventure.print(true, "You contemplate putting your arm down and leaving, but you decide against it.");
-			adventure.print(true, "Your honor is on the line.");
+			adventure.print(true, [
+					" Your honor is on the line.",
+					" You're having too much fun.",
+					" You've got at least 20 cents on this match."
+				].randomElement());
 			adventure.newLine();
 		} else {
 			adventure.newLine();
