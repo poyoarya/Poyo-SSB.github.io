@@ -100,7 +100,7 @@ $(window).keydown(function(e) {
 			} else if (adventure.lastInput.contains("objects.self") == adventure.grammarFlag) {
 				adventure.print(true, "You look at yourself.");
 				adventure.print(true, "Man, your arm looks reall good.");
-				adventure.print(true, "...Well, you should concentrate on the battle");
+				adventure.print(true, "...Well, you should concentrate on the battle.");
 				adventure.newLine();
 			} else if (adventure.lastInput.contains("objects.around") == adventure.grammarFlag) {
 				adventure.print(true, "You and your opponent are in a generic, grassy field.");
