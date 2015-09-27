@@ -87,17 +87,22 @@ $(window).keydown(function(e) {
 			adventure.newLine();
 		} else if (adventure.lastInput.contains("commands.look") == 0) {
 			adventure.newLine();
-			if (adventure.lastInput.contains("objects.opponent") == 1) {
+			if (adventure.lastInput.contains("grammar.at") == 1) {
+				adventure.grammarFlag = 2;
+			} else {
+				adventure.grammarFlag = 1;
+			}
+			if (adventure.lastInput.contains("objects.opponent") == adventure.grammarFlag) {
 				adventure.print(true, "Your opponent is concentrated on you.");
 				adventure.print(true, "You can see he's working hard.");
 				adventure.print(true, "He waits for your next move.");
 				adventure.newLine();
-			} else if (adventure.lastInput.contains("objects.self") == 1) {
+			} else if (adventure.lastInput.contains("objects.self") == adventure.grammarFlag) {
 				adventure.print(true, "You look at yourself.");
 				adventure.print(true, "Man, your arm looks reall good.");
 				adventure.print(true, "...Well, you should concentrate on the battle");
 				adventure.newLine();
-			} else if (adventure.lastInput.contains("objects.around") == 1) {
+			} else if (adventure.lastInput.contains("objects.around") == adventure.grammarFlag) {
 				adventure.print(true, "You and your opponent are in a generic, grassy field.");
 				adventure.print(true, "The sun is burning rather bright, but it's not too hot.");
 				adventure.print(true, "It's perfect weather for a flex-off.");
@@ -179,7 +184,8 @@ var adventure = {
 	},
 	
 	lastInput: "",
-	lastInputRaw: "",	
+	lastInputRaw: "",
+	grammarFlag: 1,
 	
 	words: {
 		commands: {
@@ -233,6 +239,13 @@ var adventure = {
 				"LOCATION",
 				"WHERE"
 			],
+		},
+		grammar: {
+			at: [
+				"AT",
+				"TO",
+				"TOWARDS"
+			]
 		}
 	}
 }
