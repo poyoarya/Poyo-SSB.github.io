@@ -1,4 +1,4 @@
-Array.prototype.contains = function(wordSet) {
+Array.prototype.contains = function(wordSet, location) {
 	var input = [];
 	for (i = 0; i < this.length; i++) {
 		input[i] = this[i].toUpperCase();
@@ -9,10 +9,11 @@ Array.prototype.contains = function(wordSet) {
 		return;
 	}
 	for (i = 0; i < adventure.words[finalWordSet[0]][finalWordSet[1]].length; i++) {
-		if (input.indexOf(adventure.words[finalWordSet[0]][finalWordSet[1]][i]) != -1) {
-			return input.indexOf(adventure.words[finalWordSet[0]][finalWordSet[1]][i]);
+		if (input[location] == (adventure.words[finalWordSet[0]][finalWordSet[1]][i])) {
+			return true;
 		}
 	}
+	return false;
 }
 
 Array.prototype.clean = function(deleteValue) {
@@ -55,26 +56,26 @@ $(window).keydown(function(e) {
 		
 		//====================//
 		
-		if (adventure.lastInput.contains("commands.help") == 0) {
+		if (adventure.lastInput.contains("commands.help", 0)	) {
 			adventure.newLine();
-			if (adventure.lastInput.contains("commands.help") == 1) {
+			if (adventure.lastInput.contains("commands.help", 1)) {
 				adventure.print(true, "Usage: ");
 					adventure.print(false, "help", "cyan");
 					adventure.print(false, " [command]", "green");
 				adventure.print(true, "This command will show you a list of all the commands.");
 				adventure.print(true, "Optionally, typing one of the commands after \"help\" will give more information about it.");
-			} else if (adventure.lastInput.contains("commands.flex") == 1) {
+			} else if (adventure.lastInput.contains("commands.flex", 1)) {
 				adventure.print(true, "Usage: ");
 					adventure.print(false, "flex", "cyan");
 				adventure.print(true, "This command will make you flex.");
-			} else if (adventure.lastInput.contains("commands.look") == 1) {
+			} else if (adventure.lastInput.contains("commands.look", 1)) {
 				adventure.print(true, "Usage: ");
 					adventure.print(false, "look", "cyan");
 					adventure.print(false, " [object]", "green");
 				adventure.print(true, "This command make you look around.");
 				adventure.print(true, "Optionally, typing an object after \"look\" will make you specifically inspect that object.");
 				adventure.print(true, "Try looking around, at the opponent, or at yourself!");
-			} else if (adventure.lastInput.contains("commands.quit") == 1) {
+			} else if (adventure.lastInput.contains("commands.quit", 1)) {
 				adventure.print(true, "Usage: ");
 					adventure.print(false, "quit", "cyan");
 				adventure.print(true, "This command will make you try to leave the game.");
@@ -91,7 +92,7 @@ $(window).keydown(function(e) {
 					adventure.print(false, " - You try to leave the game.");
 			}
 			adventure.newLine();
-		} else if (adventure.lastInput.contains("commands.flex") == 0) {
+		} else if (adventure.lastInput.contains("commands.flex", 0)) {
 			adventure.newLine();
 			adventure.print(true, "You flex.");
 			if (Math.random() > 0.90) {
@@ -109,9 +110,9 @@ $(window).keydown(function(e) {
 			adventure.newLine();
 			adventure.print(true, "What will you do?");
 			adventure.newLine();
-		} else if (adventure.lastInput.contains("commands.look") == 0) {
+		} else if (adventure.lastInput.contains("commands.look", 0)) {
 			adventure.newLine();
-			if (adventure.lastInput.contains("grammar.at") == 1) {
+			if (adventure.lastInput.contains("grammar.at", 1)) {
 				adventure.grammarFlag = 2;
 			} else {
 				adventure.grammarFlag = 1;
@@ -137,7 +138,7 @@ $(window).keydown(function(e) {
 				adventure.print(true, "Your opponent has his eyes locked on yours.");
 				adventure.newLine();
 			}
-		} else if (adventure.lastInput.contains("commands.quit") == 0) {
+		} else if (adventure.lastInput.contains("commands.quit", 0)) {
 			adventure.newLine();
 			adventure.print(true, "You contemplate putting your arm down and leaving, but you decide against it.");
 			adventure.print(true, [
