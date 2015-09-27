@@ -15,6 +15,16 @@ Array.prototype.contains = function(wordSet) {
 	}
 }
 
+Array.prototype.clean = function(deleteValue) {
+	for (var i = 0; i < this.length; i++) {
+		if (this[i] == deleteValue) {         
+			this.splice(i, 1);
+			i--;
+		}
+	}
+	return this;
+};
+
 var focus = setInterval(function() {
 	if ($("#input").prop("disabled") == false) {
 		$("#input").focus();
@@ -37,7 +47,7 @@ $(window).keydown(function(e) {
 		
 		adventure.lastInputRaw = $("#input").val();
 		
-		adventure.lastInput = $("#input").val().trim().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").split(" ");
+		adventure.lastInput = $("#input").val().trim().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").split(" ").clean("");
 		$("#input").prop("value", "");
 		
 		//====================//
@@ -148,7 +158,7 @@ var adventure = {
 	},
 	
 	lastInput: "",
-	lastInputRaw: "",
+	lastInputRaw: "",	
 	
 	words: {
 		commands: {
