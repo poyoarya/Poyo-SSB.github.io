@@ -15,6 +15,20 @@ Array.prototype.contains = function(wordSet) {
 	}
 }
 
+Array.prototype.clean = function(deleteValue) {
+	for (var i = 0; i < this.length; i++) {
+		if (this[i] == deleteValue) {         
+			this.splice(i, 1);
+			i--;
+		}
+	}
+	return this;
+};
+
+Array.prototype.randomElement = function() {
+    return this[Math.floor(Math.random() * this.length)]
+}
+
 var focus = setInterval(function() {
 	if ($("#input").prop("disabled") == false) {
 		$("#input").focus();
@@ -23,11 +37,18 @@ var focus = setInterval(function() {
 
 $(window).keydown(function(e) {
 	if (
+		(e.keyCode == 38) &&
+		($("#input").prop("disabled") == false)
+	) {
+		$("#input").prop("value", adventure.lastInputRaw)
+	} else if (
 		(e.keyCode == 13) &&
 		($("#input").prop("disabled") == false)	&&
 		($("#input").prop("value") != "")
 	) {
 		adventure.print(true, ">" + $("#input").val().trim(), "white");
+		
+		adventure.lastInputRaw = $("#input").val();
 		
 		adventure.lastInput = $("#input").val().trim().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").split(" ");
 		$("#input").prop("value", "");
@@ -108,7 +129,8 @@ var adventure = {
 	},
 	
 	lastInput: "",
-	isMainMenu: true,
+	lastInputRaw: "",
+	grammarFlag: 1,
 	
 	words: {
 		bool: {
