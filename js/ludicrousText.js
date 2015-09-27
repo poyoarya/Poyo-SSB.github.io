@@ -57,15 +57,39 @@ $(window).keydown(function(e) {
 		
 		if (adventure.lastInput.contains("commands.help") == 0) {
 			adventure.newLine();
-			adventure.print(true, "help", "cyan");
-				adventure.print(false, " - Shows you a list of available commands.");
-			adventure.print(true, "flex", "cyan");
-				adventure.print(false, " - You flex.");
-			adventure.print(true, "look", "cyan");
-				adventure.print(false, " [object]", "green");
-				adventure.print(false, " - You observe your surroundings.");
-			adventure.print(true, "quit", "cyan");
-				adventure.print(false, " - You try to leave the game.");
+			if (adventure.lastInput.contains("commands.help") == 1) {
+				adventure.print(true, "Usage: ");
+					adventure.print(false, "help", "cyan");
+					adventure.print(false, " [command]", "green");
+				adventure.print(true, "This command will show you a list of all the commands.");
+				adventure.print(true, "Optionally, typing one of the commands after \"help\" will give more information about it.");
+			} else if (adventure.lastInput.contains("commands.flex") == 1) {
+				adventure.print(true, "Usage: ");
+					adventure.print(false, "flex", "cyan");
+				adventure.print(true, "This command will make you flex.");
+			} else if (adventure.lastInput.contains("commands.look") == 1) {
+				adventure.print(true, "Usage: ");
+					adventure.print(false, "look", "cyan");
+					adventure.print(false, " [object]", "green");
+				adventure.print(true, "This command make you look around.");
+				adventure.print(true, "Optionally, typing an object after \"look\" will make you specifically inspect that object.");
+				adventure.print(true, "Try looking around, at the opponent, or at yourself!");
+			} else if (adventure.lastInput.contains("commands.quit") == 1) {
+				adventure.print(true, "Usage: ");
+					adventure.print(false, "quit", "cyan");
+				adventure.print(true, "This command will make you try to leave the game.");
+			} else {
+				adventure.print(true, "help", "cyan");
+					adventure.print(false, " [command]", "green");
+					adventure.print(false, " - Shows you a list of available commands, and extra info on a specific one if you need it.");
+				adventure.print(true, "flex", "cyan");
+					adventure.print(false, " - You flex.");
+				adventure.print(true, "look", "cyan");
+					adventure.print(false, " [object]", "green");
+					adventure.print(false, " - You observe your surroundings.");
+				adventure.print(true, "quit", "cyan");
+					adventure.print(false, " - You try to leave the game.");
+			}
 			adventure.newLine();
 		} else if (adventure.lastInput.contains("commands.flex") == 0) {
 			adventure.newLine();
