@@ -23,11 +23,19 @@ var focus = setInterval(function() {
 
 $(window).keydown(function(e) {
 	if (
+		(e.keyCode == 38) &&
+		($("#input").prop("disabled") == false)
+	) {
+		$("#input").prop("value", adventure.lastInputRaw)
+	}
+	if (
 		(e.keyCode == 13) &&
 		($("#input").prop("disabled") == false)	&&
 		($("#input").prop("value") != "")
 	) {
 		adventure.print(true, ">" + $("#input").val().trim(), "white");
+		
+		adventure.lastInputRaw = $("#input").val();
 		
 		adventure.lastInput = $("#input").val().trim().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").split(" ");
 		$("#input").prop("value", "");
@@ -140,7 +148,7 @@ var adventure = {
 	},
 	
 	lastInput: "",
-	isMainMenu: true,
+	lastInputRaw: "",
 	
 	words: {
 		commands: {
