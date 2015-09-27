@@ -25,6 +25,10 @@ Array.prototype.clean = function(deleteValue) {
 	return this;
 };
 
+Array.prototype.randomElement = function() {
+    return this[Math.floor(Math.random() * this.length)]
+}
+
 var focus = setInterval(function() {
 	if ($("#input").prop("disabled") == false) {
 		$("#input").focus();
@@ -67,19 +71,12 @@ $(window).keydown(function(e) {
 			adventure.newLine();
 			adventure.print(true, "You flex.");
 			if (Math.random() > 0.90) {
-				if (Math.random() < 0.5) {
-					if (Math.random() < 0.5) {
-						adventure.print(false, " Your arm feels rather tired.");
-					} else {
-						adventure.print(false, " You can feel the burn.");
-					}
-				} else {
-					if (Math.random() < 0.5) {
-						adventure.print(false, " It almost looks like your bicep has grown a little.");
-					} else {
-						adventure.print(false, " You see a bead of sweat roll down your opponent's face.");
-					}
-				}
+				adventure.print(false, [
+					" Your arm feels rather tired.",
+					" You can feel the burn.",
+					" It almost looks like your bicep has grown a little.",
+					" You see a bead of sweat roll down your opponent's face."
+				].randomElement());
 			}
 			adventure.print(true, "Opponent flexes.");
 			adventure.newLine();
