@@ -117,17 +117,17 @@ $(window).keydown(function(e) {
 			} else {
 				adventure.grammarFlag = 1;
 			}
-			if (adventure.lastInput.contains("objects.opponent") == adventure.grammarFlag) {
+			if (adventure.lastInput.contains("objects.opponent", adventure.grammarFlag)) {
 				adventure.print(true, "Your opponent is concentrated on you.");
 				adventure.print(true, "You can see he's working hard.");
 				adventure.print(true, "He waits for your next move.");
 				adventure.newLine();
-			} else if (adventure.lastInput.contains("objects.self") == adventure.grammarFlag) {
+			} else if (adventure.lastInput.contains("objects.self", adventure.grammarFlag)) {
 				adventure.print(true, "You look at yourself.");
 				adventure.print(true, "Man, your arm looks reall good.");
 				adventure.print(true, "...Well, you should concentrate on the battle.");
 				adventure.newLine();
-			} else if (adventure.lastInput.contains("objects.around") == adventure.grammarFlag) {
+			} else if (adventure.lastInput.contains("objects.around", adventure.grammarFlag)) {
 				adventure.print(true, "You and your opponent are in a generic, grassy field.");
 				adventure.print(true, "The sun is burning rather bright, but it's not too hot.");
 				adventure.print(true, "It's perfect weather for a flex-off.");
