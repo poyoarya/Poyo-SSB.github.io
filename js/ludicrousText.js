@@ -37,8 +37,7 @@ $(window).keydown(function(e) {
 		($("#input").prop("disabled") == false)
 	) {
 		$("#input").prop("value", adventure.lastInputRaw)
-	}
-	if (
+	} else if (
 		(e.keyCode == 13) &&
 		($("#input").prop("disabled") == false)	&&
 		($("#input").prop("value") != "")
@@ -59,6 +58,7 @@ $(window).keydown(function(e) {
 			adventure.print(true, "flex", "cyan");
 				adventure.print(false, " - You flex.");
 			adventure.print(true, "look", "cyan");
+				adventure.print(false, " [object]", "green");
 				adventure.print(false, " - You observe your surroundings.");
 			adventure.print(true, "quit", "cyan");
 				adventure.print(false, " - You try to leave the game.");
@@ -66,7 +66,7 @@ $(window).keydown(function(e) {
 		} else if (adventure.lastInput.contains("commands.flex") == 0) {
 			adventure.newLine();
 			adventure.print(true, "You flex.");
-			if (Math.random() > 0.95) {
+			if (Math.random() > 0.90) {
 				if (Math.random() < 0.5) {
 					if (Math.random() < 0.5) {
 						adventure.print(false, " Your arm feels rather tired.");
@@ -87,10 +87,27 @@ $(window).keydown(function(e) {
 			adventure.newLine();
 		} else if (adventure.lastInput.contains("commands.look") == 0) {
 			adventure.newLine();
-			adventure.print(true, "You and your opponent are in a generic, grassy field.");
-			adventure.print(true, "Both of you have one arm extended, poised to flex.");
-			adventure.print(true, "Your opponent has his eyes locked on yours.");
-			adventure.newLine();
+			if (adventure.lastInput.contains("objects.opponent") == 1) {
+				adventure.print(true, "Your opponent is concentrated on you.");
+				adventure.print(true, "You can see he's working hard.");
+				adventure.print(true, "He waits for your next move.");
+				adventure.newLine();
+			} else if (adventure.lastInput.contains("objects.self") == 1) {
+				adventure.print(true, "You look at yourself.");
+				adventure.print(true, "Man, your arm looks reall good.");
+				adventure.print(true, "...Well, you should concentrate on the battle");
+				adventure.newLine();
+			} else if (adventure.lastInput.contains("objects.around") == 1) {
+				adventure.print(true, "You and your opponent are in a generic, grassy field.");
+				adventure.print(true, "The sun is burning rather bright, but it's not too hot.");
+				adventure.print(true, "It's perfect weather for a flex-off.");
+				adventure.newLine();
+			} else {
+				adventure.print(true, "You and your opponent are in a field.");
+				adventure.print(true, "Both of you have one arm extended, poised to flex.");
+				adventure.print(true, "Your opponent has his eyes locked on yours.");
+				adventure.newLine();
+			}
 		} else if (adventure.lastInput.contains("commands.quit") == 0) {
 			adventure.newLine();
 			adventure.print(true, "You contemplate putting your arm down and leaving, but you decide against it.");
@@ -191,6 +208,27 @@ var adventure = {
 				"LEAVE",
 				"SCREAM"
 			]
+		},
+		objects: {
+			opponent: [
+				"OPPONENT",
+				"RIVAL",
+				"FRIEND",
+				"FIEND",
+				"FRAUD"
+			],
+			self: [
+				"SELF",
+				"ME",
+				"I",
+				"MYSELF",
+				"BICEP"
+			],
+			around: [
+				"AROUND",
+				"LOCATION",
+				"WHERE"
+			],
 		}
 	}
 }
