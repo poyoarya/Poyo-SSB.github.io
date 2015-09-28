@@ -1,9 +1,9 @@
-Array.prototype.contains = function(wordSet, location) {
+Array.prototype.contains = function(wordSet, location) { //function to see if a word is contained at a location in an array
 	var input = [];
 	for (i = 0; i < this.length; i++) {
 		input[i] = this[i].toUpperCase();
 	}
-	var finalWordSet = wordSet.split(".");
+	var finalWordSet = wordSet.split("."); //wordSet is the library of words, to account for synonyms
 	if (finalWordSet.length != 2) {
 		throw "ADVENTUREError: wordSet must be two long";
 		return;
@@ -16,7 +16,7 @@ Array.prototype.contains = function(wordSet, location) {
 	return false;
 }
 
-Array.prototype.clean = function(deleteValue) {
+Array.prototype.clean = function(deleteValue) { //remove empty values, so punctuation-only words will not errorify
 	for (var i = 0; i < this.length; i++) {
 		if (this[i] == deleteValue) {         
 			this.splice(i, 1);
@@ -26,11 +26,11 @@ Array.prototype.clean = function(deleteValue) {
 	return this;
 };
 
-Array.prototype.randomElement = function() {
+Array.prototype.randomElement = function() { //get random part of an array, for use with random word generation
     return this[Math.floor(Math.random() * this.length)]
 }
 
-var focus = setInterval(function() {
+var focus = setInterval(function() { //make sure text input is focused at all times
 	if ($("#input").prop("disabled") == false) {
 		$("#input").focus();
 	}
@@ -41,18 +41,18 @@ $(window).keydown(function(e) {
 		(e.keyCode == 38) &&
 		($("#input").prop("disabled") == false)
 	) {
-		$("#input").prop("value", adventure.lastInputRaw)
+		$("#input").prop("value", adventure.lastInputRaw) //put last input into text box when up is pressed
 	} else if (
 		(e.keyCode == 13) &&
 		($("#input").prop("disabled") == false)	&&
-		($("#input").prop("value") != "")
-	) {
+		($("#input").prop("value") != "") //input is not blank
+	) { //event when input is made
 		adventure.print(true, ">" + $("#input").val().trim(), "white");
 		
 		adventure.lastInputRaw = $("#input").val();
 		
 		adventure.lastInput = $("#input").val().trim().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").split(" ").clean("");
-		$("#input").prop("value", "");
+		$("#input").prop("value", ""); 
 		
 		//====================//
 		
@@ -160,7 +160,7 @@ $(window).keydown(function(e) {
 })
 
 var adventure = {
-	colors: {
+	colors: { //list of colors to use for text rendering
 		black: "#000000",
 		darkRed: "#800000",
 		darkGreen: "#008000",
@@ -208,9 +208,9 @@ var adventure = {
 		$("#input").prop("disabled", false)
 	},
 	
-	lastInput: "",
-	lastInputRaw: "",
-	grammarFlag: 1,
+	lastInput: "", //used for interpretation
+	lastInputRaw: "", //used for up button
+	grammarFlag: 1, //used for things like "at, with" etc.
 	
 	words: {
 		commands: {
@@ -275,7 +275,7 @@ var adventure = {
 	}
 }
 
-function flex() {
+function flex() { //initial game
 	adventure.disableInput();
 	
 	adventure.print(true, "An opponent has challenged you to a game of ");
