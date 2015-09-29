@@ -496,63 +496,17 @@ function Generate () {
 	var seqVow = 0;
 	while (shouldGenerate) {
 		if (wordParts.length < 3) {
-			var c = getRelevantCombo (wordParts[wordParts.length - 1]);
-			/*
-			if (!isVowel (c)) {
-				seqCons ++;
-				seqVow = 0;
-			} else {
-				seqCons = 0;
-				seqVow ++;
-			}
-			if (seqCons <= 2 && seqVow <= 2) {
-				wordParts.push (c);
-			} else {
-				if (isVowel (c)) {
-					while (isVowel (c)) {
-						c = getRelevantCombo (wordParts[wordParts.length - 1]);
-					}
-				}
-				if (!isVowel (c)) {
-					while (!isVowel (c)) {
-						c = getRelevantCombo (wordParts[wordParts.length - 1]);
-					}
-				}
-			}
-			*/
-			wordParts.push (c);
+			wordParts.push (getRelevantCombo (wordParts[wordParts.length - 1]));
 		} else {
-			if (Math.random () > 0.9 || wordParts.length > 8) {
-				shouldGenerate = false;
-			} else {
-				/*
-				if (!isVowel (c)) {
-					seqCons ++;
-					seqVow = 0;
+			if (wordParts.length < 9) {
+				if (Math.random () > 0.8) {
+					shouldGenerate = false;
 				} else {
-					seqCons = 0;
-					seqVow ++;
-				}
-				if (seqCons <= 2 && seqVow <= 2) {
+					c = getRelevantCombo (wordParts[wordParts.length - 1]);
 					wordParts.push (c);
-				} else {
-					if (isVowel (c)) {
-						var d = c;
-						while (isVowel (d) || d == c) {
-							d = getRelevantCombo (wordParts[wordParts.length - 1]);
-						}
-						d = c;
-					}
-					if (!isVowel (c)) {
-						var d = c;
-						while (!isVowel (d) || d == c) {
-							d = getRelevantCombo (wordParts[wordParts.length - 1]);
-						}
-					}
 				}
-				*/
-				c = getRelevantCombo (wordParts[wordParts.length - 1]);
-				wordParts.push (c);
+			} else {
+				shouldGenerate = false;
 			}
 		}
 	}
@@ -564,30 +518,29 @@ function Generate () {
 }
 function getLetter () {
 	var hasChar = false;
-	while (!hasChar) {
-		for (var i = 0; i < characters.length; i ++) {
-			if (Math.random () > 0.9) {
-				return characters[i];
-			}
+	for (var i = 0; i < characters.length; i ++) {
+		if (Math.random () > 0.9) {
+			return characters[i];
 		}
 	}
+	return characters[Math.floor (Math.random ()*characters.length+1)];
 }
 function getRelevantCombo (char) {
 	var combosTemp = [];
 	for (var i = 0; i < combo2.length; i ++) {
-		if (combo2[i].search (char) == 0) {
+		if (combo2[i][0] == char) {
 			combosTemp.push (combo2[i]);
 			//console.log (combo2[i]);
 		}
 	}
 	var hasCombo = false;
-	while (!hasCombo) {
-		for (var i = 0; i < combosTemp.length; i++) {
-			if (Math.random () > 0.8) {
-				return combosTemp[i][1];
-			}
+	for (var i = 0; i < combosTemp.length; i++) {
+		if (Math.random () > 0.8) {
+			console.log (combosTemp[i]);
+			return combosTemp[i][1];
 		}
 	}
+	return combosTemp[Math.floor (Math.random ()*combosTemp.length+1)];
 }
 
 function isVowel (char) {
