@@ -155,7 +155,7 @@ function getRandInt(min, max) {
 	\u00D6 - Ö
 */
 
-var maxLength = 9;
+var endLength = 9;
 
 function validNextLetter(letter, type) {
 	var storage = "";
@@ -332,7 +332,7 @@ function generate() {
 	
 	while (!end) {
 		finalString = generateNextLetter(finalString);
-		if (Math.random() <= ((1/maxLength)*(finalString.length-1))) {
+		if (Math.random() <= ((1/endLength)*(finalString.length-1))) {
 			end = true;
 		}
 		if (end) {
