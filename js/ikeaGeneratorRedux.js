@@ -18,11 +18,11 @@ var characters = [
 	"P",
 	"F",
 	"J",
-	"Ä",
+	"\u00C4",
 	"Y",
-	"Ö",
+	"\u00D6",
 	"H",
-	"Å",
+	"\u00C5",
 	"C",
 	"X",
 	"Z",
@@ -30,7 +30,7 @@ var characters = [
 ];
 
 var combo2 = [
-		"ER",
+	"ER",
 	"ST",
 	"EN",
 	"AN",
@@ -69,7 +69,7 @@ var combo2 = [
 	"NE",
 	"PA",
 	"VA",
-	"ÄR",
+	"\u00C4R",
 	"AS",
 	"BO",
 	"ME",
@@ -104,7 +104,7 @@ var combo2 = [
 	"UM",
 	"US",
 	"VE",
-	"ÖR",
+	"\u00D6R",
 	"KO",
 	"RS",
 	"RT",
@@ -128,12 +128,12 @@ var combo2 = [
 	"PE",
 	"AG",
 	"HA",
-	"JÖ",
+	"J\u00D6",
 	"MI",
 	"OS",
 	"PP",
 	"RN",
-	"RÖ",
+	"R\u00D6",
 	"BI",
 	"HO",
 	"JU",
@@ -148,7 +148,7 @@ var combo2 = [
 	"LM",
 	"RD",
 	"RK",
-	"RÄ",
+	"R\u00C4",
 	"AK",
 	"FI",
 	"IM",
@@ -174,24 +174,24 @@ var combo2 = [
 	"GI",
 	"GO",
 	"IR",
-	"LÄ",
+	"L\u00C4",
 	"RB",
 	"RM",
-	"ÄT",
+	"\u00C4T",
 	"IV",
 	"JE",
 	"LJ",
-	"LÖ",
+	"L\u00D6",
 	"RG",
 	"RL",
 	"RY",
-	"ÅS",
-	"ÄN",
-	"ÄS",
+	"\u00C5S",
+	"\u00C4N",
+	"\u00C4S",
 	"AB",
-	"JÄ",
+	"J\u00C4",
 	"MS",
-	"NÄ",
+	"N\u00C4",
 	"PR",
 	"TU",
 	"GN",
@@ -202,9 +202,9 @@ var combo2 = [
 	"OK",
 	"SV",
 	"UD",
-	"VÄ",
-	"ÅN",
-	"ÖN",
+	"V\u00C4",
+	"\u00C5N",
+	"\u00D6N",
 	"AJ",
 	"BB",
 	"EB",
@@ -213,21 +213,21 @@ var combo2 = [
 	"GU",
 	"IB",
 	"IP",
-	"KÄ",
+	"K\u00C4",
 	"LB",
 	"NU",
 	"OP",
 	"SB",
 	"SJ",
-	"ÄL",
+	"\u00C4L",
 	"AP",
-	"MÅ",
-	"NÖ",
+	"M\u00C5",
+	"N\u00D6",
 	"PO",
 	"SM",
 	"UG",
 	"YL",
-	"BÄ",
+	"B\u00C4",
 	"DO",
 	"EJ",
 	"KN",
@@ -240,11 +240,11 @@ var combo2 = [
 	"PI",
 	"TB",
 	"UP",
-	"VÅ",
+	"V\u00C5",
 	"YD",
 	"YT",
-	"ÅL",
-	"ÅR",
+	"\u00C5L",
+	"\u00C5R",
 	"BJ",
 	"DU",
 	"EG",
@@ -253,7 +253,7 @@ var combo2 = [
 	"FJ",
 	"FT",
 	"GS",
-	"LÅ",
+	"L\u00C5",
 	"OF",
 	"OV",
 	"PS",
@@ -265,33 +265,33 @@ var combo2 = [
 	"AC",
 	"IU",
 	"MY",
-	"MÖ",
+	"M\u00D6",
 	"OG",
 	"TJ",
 	"UK",
 	"UV",
 	"YC",
 	"YG",
-	"ÖS",
+	"\u00D6S",
 	"BU",
 	"EA",
 	"EX",
 	"FF",
 	"IO",
-	"KÖ",
+	"K\u00D6",
 	"LF",
 	"LG",
 	"LK",
 	"NV",
 	"OJ",
-	"RÅ",
+	"R\u00C5",
 	"SY",
 	"VS",
 	"YN",
 	"YR",
-	"ÅG",
-	"ÄC",
-	"ÖM",
+	"\u00C5G",
+	"\u00C4C",
+	"\u00D6M",
 	"AF",
 	"CE",
 	"CI",
@@ -301,7 +301,7 @@ var combo2 = [
 	"DY",
 	"EC",
 	"EF",
-	"FÄ",
+	"F\u00C4",
 	"GY",
 	"HJ",
 	"IC",
@@ -313,50 +313,50 @@ var combo2 = [
 	"OC",
 	"PU",
 	"SD",
-	"SÖ",
-	"TÅ",
-	"TÄ",
+	"S\u00D6",
+	"T\u00C5",
+	"T\u00C4",
 	"UB",
-	"ÄG",
-	"ÄM",
+	"\u00C4G",
+	"\u00C4M",
 	"AX",
 	"DL",
-	"FÅ",
-	"FÖ",
-	"GÅ",
-	"HÄ",
-	"HÖ",
+	"F\u00C5",
+	"F\u00D6",
+	"G\u00C5",
+	"H\u00C4",
+	"H\u00D6",
 	"IF",
 	"JK",
 	"KM",
-	"KÅ",
+	"K\u00C5",
 	"LH",
 	"MJ",
 	"MR",
-	"MÄ",
-	"NÅ",
+	"M\u00C4",
+	"N\u00C5",
 	"OA",
 	"PT",
 	"SF",
 	"VO",
 	"XT",
-	"ÅD",
-	"ÅV",
-	"ÄD",
-	"ÖD",
-	"ÖJ",
-	"ÖK",
-	"ÖV",
+	"\u00C5D",
+	"\u00C5V",
+	"\u00C4D",
+	"\u00D6D",
+	"\u00D6J",
+	"\u00D6K",
+	"\u00D6V",
 	"AU",
-	"BÅ",
-	"BÖ",
+	"B\u00C5",
+	"B\u00D6",
 	"CH",
 	"DG",
 	"EH",
 	"EP",
 	"FU",
-	"GÖ",
-	"HÅ",
+	"G\u00D6",
+	"H\u00C5",
 	"IE",
 	"JT",
 	"KK",
@@ -366,20 +366,20 @@ var combo2 = [
 	"MT",
 	"NH",
 	"NR",
-	"PÄ",
+	"P\u00C4",
 	"RF",
 	"RJ",
-	"SÅ",
+	"S\u00C5",
 	"TH",
 	"TL",
-	"TÖ",
+	"T\u00D6",
 	"UF",
 	"YK",
 	"YM",
-	"ÅB",
-	"ÅT",
-	"ÄK",
-	"ÖL",
+	"\u00C5B",
+	"\u00C5T",
+	"\u00C4K",
+	"\u00D6L",
 	"AI",
 	"BS",
 	"CA",
@@ -387,7 +387,7 @@ var combo2 = [
 	"DH",
 	"DJ",
 	"DN",
-	"DÄ",
+	"D\u00C4",
 	"FY",
 	"GB",
 	"GJ",
@@ -401,10 +401,10 @@ var combo2 = [
 	"OX",
 	"PJ",
 	"PY",
-	"PÅ",
+	"P\u00C5",
 	"RH",
 	"SH",
-	"SÄ",
+	"S\u00C4",
 	"UA",
 	"VB",
 	"VR",
@@ -413,26 +413,26 @@ var combo2 = [
 	"XA",
 	"XE",
 	"YP",
-	"ÄP",
-	"ÄV",
-	"ÖG",
+	"\u00C4P",
+	"\u00C4V",
+	"\u00D6G",
 	"AE",
 	"AH",
 	"CL",
 	"CY",
 	"DP",
 	"DT",
-	"DÅ",
+	"D\u00C5",
 	"EU",
 	"EZ",
-	"EÅ",
+	"E\u00C5",
 	"FN",
 	"GH",
 	"GT",
 	"GV",
-	"GÄ",
+	"G\u00C4",
 	"HI",
-	"IÄ",
+	"I\u00C4",
 	"JB",
 	"JL",
 	"JV",
@@ -450,10 +450,10 @@ var combo2 = [
 	"NF",
 	"OO",
 	"OU",
-	"OÅ",
-	"OÄ",
+	"O\u00C5",
+	"O\u00C4",
 	"PV",
-	"PÖ",
+	"P\u00D6",
 	"SC",
 	"SG",
 	"TD",
@@ -471,39 +471,39 @@ var combo2 = [
 	"XK",
 	"XP",
 	"XS",
-	"XÅ",
+	"X\u00C5",
 	"YB",
 	"YF",
 	"YH",
 	"ZI",
-	"ÅK",
-	"ÅÅ",
-	"ÄF",
-	"ÄJ",
-	"ÄX",
-	"ÖA",
-	"ÖF",
-	"ÖP",
-	"ÖT",
-	"ÖY"
+	"\u00C5K",
+	"\u00C5\u00C5",
+	"\u00C4F",
+	"\u00C4J",
+	"\u00C4X",
+	"\u00D6A",
+	"\u00D6F",
+	"\u00D6P",
+	"\u00D6T",
+	"\u00D6Y"
 ];
 
-function Generate () {
-	var char1 = getLetter ();
+function generate() {
+	var char1 = getLetter();
 	var wordParts = [char1];
 	var shouldGenerate = true;
 	var seqCons = 0;
 	var seqVow = 0;
 	while (shouldGenerate) {
 		if (wordParts.length < 3) {
-			wordParts.push (getRelevantCombo (wordParts[wordParts.length - 1]));
+			wordParts.push(getRelevantCombo (wordParts[wordParts.length - 1]));
 		} else {
 			if (wordParts.length < 9) {
-				if (Math.random () > 0.8) {
+				if (Math.random() > 0.8) {
 					shouldGenerate = false;
 				} else {
-					c = getRelevantCombo (wordParts[wordParts.length - 1]);
-					wordParts.push (c);
+					c = getRelevantCombo(wordParts[wordParts.length - 1]);
+					wordParts.push(c);
 				}
 			} else {
 				shouldGenerate = false;
@@ -516,40 +516,33 @@ function Generate () {
 	}
 	console.log(word);
 }
-function getLetter () {
+function getLetter() {
 	var hasChar = false;
 	for (var i = 0; i < characters.length; i ++) {
-		if (Math.random () > 0.9) {
+		if (Math.random() > 0.9) {
 			return characters[i];
 		}
 	}
-	return characters[Math.floor (Math.random ()*characters.length+1)];
+	return characters[Math.floor (Math.random() * characters.length+1)];
 }
-function getRelevantCombo (char) {
+function getRelevantCombo(c) {
 	var combosTemp = [];
 	for (var i = 0; i < combo2.length; i ++) {
-		if (combo2[i][0] == char) {
-			combosTemp.push (combo2[i]);
+		if (combo2[i][0] == c) {
+			combosTemp.push(combo2[i]);
 			//console.log (combo2[i]);
 		}
 	}
 	var hasCombo = false;
 	for (var i = 0; i < combosTemp.length; i++) {
-		if (Math.random () > 0.8) {
-			console.log (combosTemp[i]);
+		if (Math.random() > 0.8) {
+			console.log(combosTemp[i]);
 			return combosTemp[i][1];
 		}
 	}
-	return combosTemp[Math.floor (Math.random ()*combosTemp.length+1)];
+	return combosTemp[Math.floor(Math.random() * combosTemp.length+1)];
 }
 
-function isVowel (char) {
-	return (char == "A" || 
-			char == "E" || 
-			char == "I" || 
-			char == "O" || 
-			char == "U" || 
-			char == "Å" || 
-			char == "Ä" || 
-			char == "Ö");
+function isVowel(c) {
+	return ["A", "E", "I", "O", "U", "\u00C5", "\u00C4", "\u00D6"].indexOf(c.toUpperCase()) !== -1;
 }
