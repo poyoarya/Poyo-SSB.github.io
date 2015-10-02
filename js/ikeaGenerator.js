@@ -274,7 +274,7 @@ function generateNextLetter(string) {
 					return string + validNextLetter(string.lastLetter(), "v");
 				}
 			} else {
-				if (Math.random() <= 0.75) {
+				if (Math.random() <= 0.5) {
 					return string + validNextLetter(string.lastLetter(), "c");
 				} else {
 					return string + validNextLetter(string.lastLetter(), "v");
