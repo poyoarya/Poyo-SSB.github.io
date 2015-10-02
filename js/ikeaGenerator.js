@@ -159,28 +159,22 @@ var maxLength = 9;
 
 function validNextLetter(letter, type) {
 	var storage = "";
-	console.log("letter is " + letter);
 	if (type === "v") {
-		console.log("vowel chosen");
 		if (letter === "Y") {
 			return possibilities["Y"].randomElement();
 		} else {
 			if ((Math.random() <= 0.8) || !(possibilities[letter].containsAccent())) { //no accent
-				console.log("no accent");
 				while ((!storage.isVowel()) || (storage === "") || (storage.isAccent())) {
 					storage = possibilities[letter].randomElement();
-					console.log(storage);
 					if (storage.isVowel() && !storage.isAccent()) {
-						console.log("returning "+storage); return storage;
+						return storage;
 					}
 				}
 			} else { //yes accent
-				console.log("yes accent");
 				while ((!storage.isAccent()) || (storage === "")) {
 					storage = possibilities[letter].randomElement();
-					console.log(storage);
 					if (storage.isAccent()) {
-						console.log("returning "+storage); return storage;
+						return storage;
 					}
 				}
 			}
@@ -192,7 +186,7 @@ function validNextLetter(letter, type) {
 			while ((!storage.isConsonant()) || (storage == "")) {
 				storage = possibilities[letter].randomElement();
 				if (storage.isConsonant()) {
-					console.log("returning "+storage); return storage;
+					return storage;
 				}
 			}
 		}
@@ -200,7 +194,7 @@ function validNextLetter(letter, type) {
 		while ((!storage.isVowel()) || (storage == "")) {
 			storage = possibilities[letter].randomElement();
 			if (storage.isVowel() && !storage.isAccent()) {
-				console.log("returning "+storage); return storage;
+				return storage;
 			}
 		}
 	} else {
@@ -210,25 +204,19 @@ function validNextLetter(letter, type) {
 
 function validEnding(letter, type) {
 	var storage = "";
-	console.log("letter is " + letter);
 	if (type === "v") {
-		console.log("vowel chosen");
 		if ((Math.random() <= 0.8) || !(endings[letter].containsAccent())) { //no accent
-			console.log("no accent");
 			while ((!storage.lastLetter(1).isVowel()) || (storage === "") || (storage.lastLetter(1).isAccent())) {
 				storage = endings[letter].randomElement();
-				console.log(storage);
 				if (storage.lastLetter(1).isVowel() && !storage.lastLetter(1).isAccent()) {
-					console.log("returning "+storage); return storage;
+					return storage;
 				}
 			}
 		} else { //yes accent
-			console.log("yes accent");
 			while ((!storage.lastLetter(1).isAccent()) || (storage === "")) {
 				storage = endings[letter].randomElement();
-				console.log(storage);
 				if (storage.lastLetter(1).isAccent()) {
-					console.log("returning "+storage); return storage;
+					return storage;
 				}
 			}
 		}
@@ -236,14 +224,14 @@ function validEnding(letter, type) {
 		while ((!storage.lastLetter(1).isConsonant()) || (storage == "")) {
 			storage = endings[letter].randomElement();
 			if (storage.lastLetter(1).isConsonant()) {
-				console.log("returning "+storage); return storage;
+				return storage;
 			}
 		}
 	} else if (type === "va") {
 		while ((!storage.lastLetter(1).isVowel()) || (storage == "")) {
 			storage = endings[letter].randomElement();
 			if (storage.lastLetter(1).isVowel() && !storage.lastLetter(1).isAccent()) {
-				console.log("returning "+storage); return storage;
+				return storage;
 			}
 		}
 	} else {
@@ -251,19 +239,13 @@ function validEnding(letter, type) {
 	}
 }
 function generateNextLetter(string) {
-	console.log("string is \"" + string + "\"");
 	if (string === "BEGIN") {
 		return vowelBeginnings.concat(vowelAccentBeginnings.concat(consonantBeginnings)).randomElement();
-		console.log("string was nothing");
 	} else {
-		console.log("string was not nothing");
 		if (string.lastLetter().isVowel()) {
-			console.log("last letter was vowel");
 			if (string.lastLetter().isVowel(1)) {
-				console.log("last two letters were vowels");
 				return string + validNextLetter(string.lastLetter(), "c");
 			} else {
-				console.log("the last two letters were not both vowels");
 				if (Math.random() <= 0.2) {
 					if (string.lastLetter().isAccent()) {
 						return string + validNextLetter(string.lastLetter(), "va");
@@ -275,7 +257,6 @@ function generateNextLetter(string) {
 				}
 			}
 		} else {
-			console.log("last letter was consonant");
 			if (string.lastLetter().isConsonant(1)) {
 				if (string.lastLetter().isConsonant(2)) {
 					if (string.lastLetter().isConsonant(3)) {
@@ -347,16 +328,11 @@ function ender(string) {
 
 function generate() {
 	var end = false;
-	console.log("generating");
 	var finalString = "BEGIN";
 	
 	while (!end) {
-		console.log("calling generation");
 		finalString = generateNextLetter(finalString);
-		console.log("generation success as " + finalString);
-		console.log(((1/maxLength)*(finalString.length-1)) + " is chance of ending");
 		if (Math.random() <= ((1/maxLength)*(finalString.length-1))) {
-			console.log("end it!");
 			end = true;
 		}
 		if (end) {
