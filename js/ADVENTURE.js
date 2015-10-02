@@ -61,7 +61,7 @@ $(window).keydown(function(e) {
 			} else if (adventure.lastInput.contains("menu.menuLoad", 0)) {
 			} else if (adventure.lastInput.contains("menu.menuDelete", 0)) {
 			} else if (adventure.lastInput.contains("menu.menuOption", 0)) {
-			} else if (adventure.lastInput.contains("menu.menuQuit") == 0 || adventure.lastInput.contains("menu.menuQuit", 1)) {
+			} else if (adventure.lastInput.contains("menu.menuQuit", 0) || adventure.lastInput.contains("menu.menuQuit", 1)) {
 				adventure.newLine()
 				adventure.print(true, "noooooooooooooooooooo");
 				window.location.href = "index.html";
