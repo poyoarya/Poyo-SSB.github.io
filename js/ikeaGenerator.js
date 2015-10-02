@@ -155,6 +155,8 @@ function getRandInt(min, max) {
 	\u00D6 - Ö
 */
 
+var maxLength = 9;
+
 function validNextLetter(letter, type) {
 	var storage = "";
 	console.log("letter is " + letter);
@@ -279,19 +281,19 @@ function generateNextLetter(string) {
 					if (string.lastLetter().isConsonant(3)) {
 						return string + validNextLetter(string.lastLetter(), "v");
 					}
-					if (Math.random() <= 0.2) {
+					if (Math.random() <= 0.25) {
 						return string + validNextLetter(string.lastLetter(), "c");
 					} else {
 						return string + validNextLetter(string.lastLetter(), "v");
 					}
 				}
-				if (Math.random() <= 0.4) {
+				if (Math.random() <= 0.5) {
 					return string + validNextLetter(string.lastLetter(), "c");
 				} else {
 					return string + validNextLetter(string.lastLetter(), "v");
 				}
 			} else {
-				if (Math.random() <= 0.6) {
+				if (Math.random() <= 0.75) {
 					return string + validNextLetter(string.lastLetter(), "c");
 				} else {
 					return string + validNextLetter(string.lastLetter(), "v");
@@ -352,8 +354,8 @@ function generate() {
 		console.log("calling generation");
 		finalString = generateNextLetter(finalString);
 		console.log("generation success as " + finalString);
-		console.log(((1/9)*(finalString.length-1)) + " is chance of ending");
-		if (Math.random() <= ((1/9)*(finalString.length-1))) {
+		console.log(((1/maxLength)*(finalString.length-1)) + " is chance of ending");
+		if (Math.random() <= ((1/maxLength)*(finalString.length-1))) {
 			console.log("end it!");
 			end = true;
 		}
