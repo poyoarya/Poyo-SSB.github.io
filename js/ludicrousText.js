@@ -124,13 +124,24 @@ $(window).keydown(function(e) {
 				adventure.newLine();
 			} else if (adventure.lastInput.contains("objects.self", adventure.grammarFlag)) {
 				adventure.print(true, "You look at yourself.");
-				adventure.print(true, "Man, your arm looks reall good.");
+				adventure.print(true, "Man, your arm looks really good.");
 				adventure.print(true, "...Well, you should concentrate on the battle.");
 				adventure.newLine();
 			} else if (adventure.lastInput.contains("objects.around", adventure.grammarFlag)) {
 				adventure.print(true, "You and your opponent are in a generic, grassy field.");
 				adventure.print(true, "The sun is burning rather bright, but it's not too hot.");
 				adventure.print(true, "It's perfect weather for a flex-off.");
+				adventure.newLine();
+			} else if (adventure.lastInput.contains("objects.sun", adventure.grammarFlag)) {
+				adventure.print(true, "You look into the sun.");
+				adventure.print(true, [
+					"Your eyes burn, but you know that you can still flex.",
+					"You are now blind. But your heart doesn't care. Flexing is all that matters now.",
+					"It hurts like hell, but knowing you can still flex feels like heaven.",
+					"Tears roll down your face as your eyes burn, but you still flex on.",
+					"Your eyes have melted away, but your muscles grow swolier still.",
+					"You want to close your eyes, but all of your conscious energy is focused on flexing."
+				].randomElement());
 				adventure.newLine();
 			} else {
 				adventure.print(true, "You and your opponent are in a field.");
@@ -142,9 +153,9 @@ $(window).keydown(function(e) {
 			adventure.newLine();
 			adventure.print(true, "You contemplate putting your arm down and leaving, but you decide against it.");
 			adventure.print(true, [
-					" Your honor is on the line.",
-					" You're having too much fun.",
-					" You've got at least 20 cents on this match."
+					"Your honor is on the line.",
+					"You're having too much fun.",
+					"You've got at least 20 cents on this match."
 				].randomElement());
 			adventure.newLine();
 		} else {
@@ -264,6 +275,15 @@ var adventure = {
 				"LOCATION",
 				"WHERE"
 			],
+			sun: [
+				"SUN",
+				"SOL",
+				"UP",
+				"STAR",
+				"YELLOW",
+				"ORB",
+				"SHINY"
+			]
 		},
 		grammar: {
 			at: [
