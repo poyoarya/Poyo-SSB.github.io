@@ -1,53 +1,53 @@
-String.prototype.lastLetter = function(offset) {
-	if (!offset) {offset = 0}
-	return this.substring(this.length - 1 - offset, this.length-offset).toUpperCase();
-}
+String.prototype.lastLetter = function (offset) {
+	if (!offset) {offset = 0; }
+	return this.substring(this.length - 1 - offset, this.length - offset).toUpperCase();
+};
 
-String.prototype.isVowel = function() {
-	return ["A","E","I","O","U","\u00C5","\u00C4","\u00D6"].indexOf(this.toUpperCase()) !== -1;
-}
+String.prototype.isVowel = function () {
+	return ["A", "E", "I", "O", "U", "\u00C5", "\u00C4", "\u00D6"].indexOf(this.toUpperCase()) !== -1;
+};
 
-String.prototype.isConsonant = function() {
-	return ["B","C","D","F","G","H","J","K","L","M","N","P","R","S","T","V","W","Y","Z"].indexOf(this.toUpperCase()) !== -1;
-}
+String.prototype.isConsonant = function () {
+	return ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "R", "S", "T", "V", "W", "Y", "Z"].indexOf(this.toUpperCase()) !== -1;
+};
 
-String.prototype.isAccent = function() {
-	return ["\u00C5","\u00C4","\u00D6"].indexOf(this.toUpperCase()) !== -1;
-}
+String.prototype.isAccent = function () {
+	return ["\u00C5", "\u00C4", "\u00D6"].indexOf(this.toUpperCase()) !== -1;
+};
 
-Array.prototype.randomElement = function() {
+Array.prototype.randomElement = function () {
     return this[Math.floor(Math.random() * this.length)];
-}
+};
 
-Array.prototype.containsAccent = function() {
-	for (i=0; i <= this.length; i++) {
+Array.prototype.containsAccent = function () {
+	for (var i=0; i <= this.length; i++) {
 		if (i == this.length) {
-			return false
+			return false;
 		} else if (this[i][0].isAccent()) {
 			return true;
 		}
 	}
-}
+};
 
-Array.prototype.containsVowel = function() {
-	for (i=0; i <= this.length; i++) {
+Array.prototype.containsVowel = function () {
+	for (var i = 0; i <= this.length; i++) {
 		if (i == this.length) {
-			return false
+			return false;
 		} else if (this[i][0].isVowel()) {
 			return true;
 		}
 	}
-}
+};
 
-Array.prototype.containsConsonant = function() {
-	for (i=0; i <= this.length; i++) {
+Array.prototype.containsConsonant = function () {
+	for (var i = 0; i <= this.length; i++) {
 		if (i == this.length) {
-			return false
+			return false;
 		} else if (this[i][0].isConsonant()) {
 			return true;
 		}
 	}
-}
+};
 
 var vowelBeginnings = [
 	"A",
@@ -114,9 +114,9 @@ var possibilities = {
 	"\u00C5": ["L", "D", "S", "G", "V", "T", "R", "B", "N", "K", "\u00C5"],
 	"\u00C4": ["N", "T", "R", "D", "S", "L", "M", "C", "J", "G", "P", "K", "F", "V", "X"],
 	"\u00D6": ["V", "R", "J", "L", "M", "N", "D", "K", "G", "F", "S", "P"]
-}
+};
 
-var endings = var endings = {
+var endings = {
 	"A": ["BB", "BO", "CK", "DD", "DE", "DO", "EL", "GA", "JA", "JS", "JT", "KA", "KE", "LA", "LD", "LG", "LJ", "LK", "LL", "LM", "LT", "MA", "NA", "ND", "NG", "NJ", "NK", "NS", "NT", "N\u00D6", "PA", "PS", "RA", "RD", "RE", "RI", "RK", "RM", "RP", "RS", "RT", "RV", "R\u00D6", "SA", "SS", "ST", "TA", "TI", "TS", "TT", "VE"],
 	"B": ["AL", "AN", "AR", "BA", "BE", "BI", "BO", "EH", "ER", "ET", "IG", "IL", "LA", "LE", "OL", "RO", "\u00C4K", "\u00C4R"],
 	"C": ["IA", "IS", "KA", "KE"],
@@ -143,11 +143,7 @@ var endings = var endings = {
 	"\u00C5": ["DA", "LA", "NN", "VA", "\u00C5N"],
 	"\u00C4": ["CK", "DA", "DD", "GG", "KT", "LK", "LL", "NG", "NN", "RA", "RM", "RT", "TA", "TT", "XT"],
 	"\u00D6": ["DA", "GE", "JA", "JE", "JS", "KA", "K\u00D6", "ME", "NA", "NN", "N\u00D6", "RA", "RN", "RT", "SA", "VA", "VD"]
-}
-
-function getRandInt(min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
 
 /*
 	\u00C5 - Å
@@ -161,7 +157,7 @@ function validNextLetter(letter, type) {
 	var storage = "";
 	if (type === "v") {
 		if (letter === "Y") {
-			return possibilities["Y"].randomElement();
+			return possibilities.Y.randomElement();
 		} else {
 			if ((Math.random() <= 0.8) || !(possibilities[letter].containsAccent())) { //no accent
 				while ((!storage.isVowel()) || (storage === "") || (storage.isAccent())) {
@@ -183,7 +179,7 @@ function validNextLetter(letter, type) {
 		if (letter === "W" || letter === "Z") {
 			return "I";
 		} else {
-			while ((!storage.isConsonant()) || (storage == "")) {
+			while ((!storage.isConsonant()) || (storage === "")) {
 				storage = possibilities[letter].randomElement();
 				if (storage.isConsonant()) {
 					return storage;
@@ -191,7 +187,7 @@ function validNextLetter(letter, type) {
 			}
 		}
 	} else if (type === "va") {
-		while ((!storage.isVowel()) || (storage == "")) {
+		while ((!storage.isVowel()) || (storage === "")) {
 			storage = possibilities[letter].randomElement();
 			if (storage.isVowel() && !storage.isAccent()) {
 				return storage;
@@ -221,14 +217,14 @@ function validEnding(letter, type) {
 			}
 		}
 	} else if (type === "c") {
-		while ((!storage.lastLetter(1).isConsonant()) || (storage == "")) {
+		while ((!storage.lastLetter(1).isConsonant()) || (storage === "")) {
 			storage = endings[letter].randomElement();
 			if (storage.lastLetter(1).isConsonant()) {
 				return storage;
 			}
 		}
 	} else if (type === "va") {
-		while ((!storage.lastLetter(1).isVowel()) || (storage == "")) {
+		while ((!storage.lastLetter(1).isVowel()) || (storage === "")) {
 			storage = endings[letter].randomElement();
 			if (storage.lastLetter(1).isVowel() && !storage.lastLetter(1).isAccent()) {
 				return storage;
