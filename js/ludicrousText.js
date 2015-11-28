@@ -1,41 +1,3 @@
-Array.prototype.contains = function(wordSet, location) { //function to see if a word is contained at a location in an array
-	var input = [];
-	for (i = 0; i < this.length; i++) {
-		input[i] = this[i].toUpperCase();
-	}
-	var finalWordSet = wordSet.split("."); //wordSet is the library of words, to account for synonyms
-	if (finalWordSet.length != 2) {
-		throw "ADVENTUREError: wordSet must be two long";
-		return;
-	}
-	for (i = 0; i < adventure.words[finalWordSet[0]][finalWordSet[1]].length; i++) {
-		if (input[location] == (adventure.words[finalWordSet[0]][finalWordSet[1]][i])) {
-			return true;
-		}
-	}
-	return false;
-}
-
-Array.prototype.clean = function(deleteValue) { //remove empty values, so punctuation-only words will not errorify
-	for (var i = 0; i < this.length; i++) {
-		if (this[i] == deleteValue) {         
-			this.splice(i, 1);
-			i--;
-		}
-	}
-	return this;
-};
-
-Array.prototype.randomElement = function() { //get random part of an array, for use with random word generation
-    return this[Math.floor(Math.random() * this.length)]
-}
-
-var focus = setInterval(function() { //make sure text input is focused at all times
-	if ($("#input").prop("disabled") == false) {
-		$("#input").focus();
-	}
-}, 10);
-
 $(window).keydown(function(e) {
 	if (
 		(e.keyCode == 38) &&
@@ -59,11 +21,23 @@ $(window).keydown(function(e) {
 		if (adventure.lastInput.contains("commands.help", 0)	) {
 			adventure.newLine();
 			if (adventure.lastInput.contains("commands.help", 1)) {
-				adventure.print(true, "Usage: ");
-					adventure.print(false, "help", "cyan");
-					adventure.print(false, " [command]", "green");
-				adventure.print(true, "This command will show you a list of all the commands.");
-				adventure.print(true, "Optionally, typing one of the commands after \"help\" will give more information about it.");
+				if (adventure.lastInput.contains("commands.help", 2)) {
+					if (adventure.lastInput.contains("commands.help", 3)) {
+						adventure.print(true, "Usage: ");
+							adventure.print(false, "help help help help", "cyan");
+						adventure.print(true, "Isn't this a bit excessive?")
+					} else {
+						adventure.print(true, "Usage: ");
+							adventure.print(false, "help help help", "cyan");
+						adventure.print(true, "This command will show you how to use the command that will list all commands.")
+					}
+				} else {	
+					adventure.print(true, "Usage: ");
+						adventure.print(false, "help", "cyan");
+						adventure.print(false, " [command]", "green");
+					adventure.print(true, "This command will show you a list of all the commands.");
+					adventure.print(true, "Optionally, typing one of the commands after \"help\" will give more information about it.");
+				}
 			} else if (adventure.lastInput.contains("commands.flex", 1)) {
 				adventure.print(true, "Usage: ");
 					adventure.print(false, "flex", "cyan");
@@ -95,7 +69,7 @@ $(window).keydown(function(e) {
 		} else if (adventure.lastInput.contains("commands.flex", 0)) {
 			adventure.newLine();
 			adventure.print(true, "You flex.");
-			if (Math.random() > 0.90) {
+			if (Math.random() > 0.85) {
 				adventure.print(false, [
 					" Your arm feels rather tired.",
 					" You can feel the burn.",
@@ -141,6 +115,7 @@ $(window).keydown(function(e) {
 					"Tears roll down your face as your eyes burn, but you still flex on.",
 					"Your eyes have melted away, but your muscles grow swolier still.",
 					"You want to close your eyes, but all of your conscious energy is focused on flexing."
+					"You can feel the burn in your empty eye-sockets."
 				].randomElement());
 				adventure.newLine();
 			} else {
@@ -155,7 +130,8 @@ $(window).keydown(function(e) {
 			adventure.print(true, [
 					"Your honor is on the line.",
 					"You're having too much fun.",
-					"You've got at least 20 cents on this match."
+					"You've got at least 20 cents on this match.",
+					"If you lose, then you don't get to flex again for a whole year."
 				].randomElement());
 			adventure.newLine();
 		} else {
@@ -169,129 +145,84 @@ $(window).keydown(function(e) {
 		//====================//
 	}
 })
-
-var adventure = {
-	colors: { //list of colors to use for text rendering
-		black: "#000000",
-		darkRed: "#800000",
-		darkGreen: "#008000",
-		darkYellow: "#808000",
-		darkBlue: "#000080",
-		darkMagenta: "#800080",
-		darkCyan: "#008080",
-		gray: "#C0C0C0",
-		darkGray: "#808080",
-		red: "#ff0000",
-		green: "#00ff00",
-		yellow: "#ffff00",
-		blue: "#0000ff",
-		magenta: "#ff00ff",
-		cyan: "#00ffff",
-		white: "#ffffff"
+	
+adventure.words = {
+	commands: {
+		help: [
+			"HELP",
+			"COMMANDS"
+		],
+		flex: [
+			"FLEX",
+			"SWOLE",
+			"LIFT",
+			"GAIN",
+			"GAINS",
+			"GAINZ",
+			"PUMP",
+			"MUSCLE",
+			"IRON"
+		],
+		look: [
+			"LOOK",
+			"SEE",
+			"WHAT",
+			"AROUND",
+			"SURROUNDING",
+			"SURROUNDINGS"
+		],
+		quit: [
+			"QUIT",
+			"EXIT",
+			"LEAVE",
+			"SCREAM"
+		]
 	},
-	
-	print: function(isNewLine, text, color) {
-		if (typeof color == 'undefined') {
-			color = "gray";
-		}
-		if (isNewLine) {
-			$("#console").append(
-				$("<p style=\"color: " + adventure.colors[color] + ";\"></p>").text(text)
-			);
-		} else {
-			$("#console").children().last().append(
-				$("<span style=\"color: " + adventure.colors[color] + ";\"></span>").text(text)
-			);
-		}
+	objects: {
+		opponent: [
+			"OPPONENT",
+			"RIVAL",
+			"FRIEND",
+			"FIEND",
+			"FRAUD"
+		],
+		self: [
+			"SELF",
+			"ME",
+			"I",
+			"MYSELF",
+			"BICEP"
+		],
+		around: [
+			"AROUND",
+			"LOCATION",
+			"WHERE"
+		],
+		sun: [
+			"SUN",
+			"SOL",
+			"UP",
+			"STAR",
+			"YELLOW",
+			"ORB",
+			"SHINY"
+		]
+		duck: [
+			"DUCK"
+			"QUACK",
+			"DUK",
+			"QUAK",
+			"FOWL",
+			"POYO"
+		]
 	},
-	
-	newLine: function() {
-		$("#console").append($("</br>"));
-	},
-	
-	disableInput: function() {
-		$("#arrow").hide()
-		$("#input").prop("disabled", true)
-	},
-	
-	enableInput: function() {
-		$("#arrow").show()
-		$("#input").prop("disabled", false)
-	},
-	
-	lastInput: "", //used for interpretation
-	lastInputRaw: "", //used for up button
-	grammarFlag: 1, //used for things like "at, with" etc.
-	
-	words: {
-		commands: {
-			help: [
-				"HELP",
-				"COMMANDS"
-			],
-			flex: [
-				"FLEX",
-				"SWOLE",
-				"LIFT",
-				"GAIN",
-				"GAINS",
-				"GAINZ",
-				"PUMP",
-				"MUSCLE",
-				"IRON"
-			],
-			look: [
-				"LOOK",
-				"SEE",
-				"WHAT",
-				"AROUND",
-				"SURROUNDING",
-				"SURROUNDINGS"
-			],
-			quit: [
-				"QUIT",
-				"EXIT",
-				"LEAVE",
-				"SCREAM"
-			]
-		},
-		objects: {
-			opponent: [
-				"OPPONENT",
-				"RIVAL",
-				"FRIEND",
-				"FIEND",
-				"FRAUD"
-			],
-			self: [
-				"SELF",
-				"ME",
-				"I",
-				"MYSELF",
-				"BICEP"
-			],
-			around: [
-				"AROUND",
-				"LOCATION",
-				"WHERE"
-			],
-			sun: [
-				"SUN",
-				"SOL",
-				"UP",
-				"STAR",
-				"YELLOW",
-				"ORB",
-				"SHINY"
-			]
-		},
-		grammar: {
-			at: [
-				"AT",
-				"TO",
-				"TOWARDS"
-			]
-		}
+	grammar: {
+		at: [
+			"AT",
+			"TO",
+			"OF"
+			"TOWARDS"
+		]
 	}
 }
 
