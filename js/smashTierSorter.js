@@ -36,182 +36,196 @@ window.addEventListener("keydown", function(e) {
 }, false);
 
 var ssb4 = [
-	{name: "Bowser", url: "bowser", score: 0},
-	{name: "Bowser Jr.", url: "bowserJr", score: 0},
-	{name: "Captain Falcon", url: "captainFalcon", score: 0},
-	{name: "Charizard", url: "charizard", score: 0},
-	{name: "Dark Pit", url: "darkPit", score: 0},
-	{name: "Diddy Kong", url: "diddyKong", score: 0},
-	{name: "Donkey Kong", url: "donkeyKong", score: 0},
-	{name: "Dr. Mario", url: "drMario", score: 0},
-	{name: "Duck Hunt Duo", url: "duckHuntDuo", score: 0},
-	{name: "Falco", url: "falco", score: 0},
-	{name: "Fox", url: "fox", score: 0},
-	{name: "Ganondorf", url: "ganondorf", score: 0},
-	{name: "Greninja", url: "greninja", score: 0},
-	{name: "Ike", url: "ike", score: 0},
-	{name: "Jigglypuff", url: "jigglypuff", score: 0},
-	{name: "King Dedede", url: "kingDedede", score: 0},
-	{name: "Kirby", url: "kirby", score: 0},
-	{name: "Link", url: "link", score: 0},
-	{name: "Little Mac", url: "littleMac", score: 0},
-	{name: "Lucario", url: "lucario", score: 0},
-	{name: "Lucas", url: "lucas", score: 0},
-	{name: "Lucina", url: "lucina", score: 0},
-	{name: "Luigi", url: "luigi", score: 0},
-	{name: "Mario", url: "mario", score: 0},
-	{name: "Marth", url: "marth", score: 0},
-	{name: "Mega Man", url: "megaMan", score: 0},
-	{name: "Meta Knight", url: "metaKnight", score: 0},
-	{name: "Mewtwo", url: "mewtwo", score: 0},
-	{name: "Mii Brawler", url: "miiBrawler", score: 0},
-	{name: "Mii Gunner", url: "miiGunner", score: 0},
-	{name: "Mii Swordsman", url: "miiSwordsman", score: 0},
-	{name: "Mr. Game & Watch", url: "mrGameAndWatch", score: 0},
-	{name: "Ness", url: "ness", score: 0},
-	{name: "Olimar", url: "olimar", score: 0},
-	{name: "PAC-MAN", url: "pacMan", score: 0},
-	{name: "Palutena", url: "palutena", score: 0},
-	{name: "Peach", url: "peach", score: 0},
-	{name: "Pikachu", url: "pikachu", score: 0},
-	{name: "Pit", url: "pit", score: 0},
-	{name: "R.O.B.", url: "rob", score: 0},
-	{name: "Robin", url: "robin", score: 0},
-	{name: "Rosalina & Luma", url: "rosalinaAndLuma", score: 0},
-	{name: "Roy", url: "roy", score: 0},
-	{name: "Ryu", url: "ryu", score: 0},
-	{name: "Samus", url: "samus", score: 0},
-	{name: "Sheik", url: "sheik", score: 0},
-	{name: "Shulk", url: "shulk", score: 0},
-	{name: "Sonic", url: "sonic", score: 0},
-	{name: "Toon Link", url: "toonLink", score: 0},
-	{name: "Villager", url: "villager", score: 0},
-	{name: "Wario", url: "wario", score: 0},
-	{name: "Wii Fit Trainer", url: "wiiFitTrainer", score: 0},
-	{name: "Yoshi", url: "yoshi", score: 0},
-	{name: "Zelda", url: "zelda", score: 0},
-	{name: "Zero Suit Samus", url: "zeroSuitSamus", score: 0}
+	"Bowser",
+	"Bowser Jr.",
+	"Captain Falcon",
+	"Charizard",
+	"Dark Pit",
+	"Diddy Kong",
+	"Donkey Kong",
+	"Dr. Mario",
+	"Duck Hunt Duo",
+	"Falco",
+	"Fox",
+	"Ganondorf",
+	"Greninja",
+	"Ike",
+	"Jigglypuff",
+	"King Dedede",
+	"Kirby",
+	"Link",
+	"Little Mac",
+	"Lucario",
+	"Lucas",
+	"Lucina",
+	"Luigi",
+	"Mario",
+	"Marth",
+	"Mega Man",
+	"Meta Knight",
+	"Mewtwo",
+	"Mii Brawler",
+	"Mii Gunner",
+	"Mii Swordsman",
+	"Mr. Game & Watch",
+	"Ness",
+	"Olimar",
+	"PAC-MAN",
+	"Palutena",
+	"Peach",
+	"Pikachu",
+	"Pit",
+	"R.O.B.",
+	"Robin",
+	"Rosalina & Luma",
+	"Roy",
+	"Ryu",
+	"Samus",
+	"Sheik",
+	"Shulk",
+	"Sonic",
+	"Toon Link",
+	"Villager",
+	"Wario",
+	"Wii Fit Trainer",
+	"Yoshi",
+	"Zelda",
+	"Zero Suit Samus",
 ]
 
 var ssbb = [
-	{name: "Bowser", url: "bowser", score: 0},
-	{name: "Captain Falcon", url: "captainFalcon", score: 0},
-	{name: "Diddy Kong", url: "diddyKong", score: 0},
-	{name: "Donkey Kong", url: "donkeyKong", score: 0},
-	{name: "Falco", url: "falco", score: 0},
-	{name: "Fox", url: "fox", score: 0},
-	{name: "Ganondorf", url: "ganondorf", score: 0},
-	{name: "Ice Climbers", url: "iceClimbers", score: 0},
-	{name: "Ike", url: "ike", score: 0},
-	{name: "Jigglypuff", url: "jigglypuff", score: 0},
-	{name: "King Dedede", url: "kingDedede", score: 0},
-	{name: "Kirby", url: "kirby", score: 0},
-	{name: "Link", url: "link", score: 0},
-	{name: "Lucario", url: "lucario", score: 0},
-	{name: "Lucas", url: "lucas", score: 0},
-	{name: "Luigi", url: "luigi", score: 0},
-	{name: "Mario", url: "mario", score: 0},
-	{name: "Marth", url: "marth", score: 0},
-	{name: "Meta Knight", url: "metaKnight", score: 0},
-	{name: "Mr. Game & Watch", url: "mrGameAndWatch", score: 0},
-	{name: "Ness", url: "ness", score: 0},
-	{name: "Pit", url: "pit", score: 0},
-	{name: "Pok\u00e9mon Trainer", url: "pokemonTrainer", score: 0},
-	{name: "R.O.B.", url: "rob", score: 0},
-	{name: "Samus", url: "samus", score: 0},
-	{name: "Sheik", url: "sheik", score: 0},
-	{name: "Snake", url: "snake", score: 0},
-	{name: "Sonic", url: "sonic", score: 0},
-	{name: "Toon Link", url: "toonLink", score: 0},
-	{name: "Wario", url: "wario", score: 0},
-	{name: "Wolf", url: "wolf", score: 0},
-	{name: "Yoshi", url: "yoshi", score: 0},
-	{name: "Zelda", url: "zelda", score: 0},
-	{name: "Zero Suit Samus", url: "zeroSuitSamus", score: 0}
+	"Bowser",
+	"Captain Falcon",
+	"Diddy Kong",
+	"Donkey Kong",
+	"Falco",
+	"Fox",
+	"Ganondorf",
+	"Ice Climbers",
+	"Ike",
+	"Jigglypuff",
+	"King Dedede",
+	"Kirby",
+	"Link",
+	"Lucario",
+	"Lucas",
+	"Luigi",
+	"Mario",
+	"Marth",
+	"Meta Knight",
+	"Mr. Game & Watch",
+	"Ness",
+	"Pit",
+	"Pok\u00e9mon Trainer",
+	"R.O.B.",
+	"Samus",
+	"Sheik",
+	"Snake",
+	"Sonic",
+	"Toon Link",
+	"Wario",
+	"Wolf",
+	"Yoshi",
+	"Zelda",
+	"Zero Suit Samus",
 ]
 
 var ssbm = [
-	{name: "Bowser", url: "bowser", score: 0},
-	{name: "Captain Falcon", url: "captainFalcon", score: 0},
-	{name: "Donkey Kong", url: "donkeyKong", score: 0},
-	{name: "Dr. Mario", url: "drMario", score: 0},
-	{name: "Falco", url: "falco", score: 0},
-	{name: "Fox", url: "fox", score: 0},
-	{name: "Ganondorf", url: "ganondorf", score: 0},
-	{name: "Ice Climbers", url: "iceClimbers", score: 0},
-	{name: "Jigglypuff", url: "jigglypuff", score: 0},
-	{name: "Kirby", url: "kirby", score: 0},
-	{name: "Link", url: "link", score: 0},
-	{name: "Luigi", url: "luigi", score: 0},
-	{name: "Mario", url: "mario", score: 0},
-	{name: "Marth", url: "marth", score: 0},
-	{name: "Mewtwo", url: "mewtwo", score: 0},
-	{name: "Mr. Game & Watch", url: "mrGameAndWatch", score: 0},
-	{name: "Ness", url: "ness", score: 0},
-	{name: "Peach", url: "peach", score: 0},
-	{name: "Pichu", url: "pichu", score: 0},
-	{name: "Pikachu", url: "pikachu", score: 0},
-	{name: "Roy", url: "roy", score: 0},
-	{name: "Samus", url: "samus", score: 0},
-	{name: "Sheik", url: "sheik", score: 0},
-	{name: "Yoshi", url: "yoshi", score: 0},
-	{name: "Young Link", url: "youngLink", score: 0},
-	{name: "Zelda", url: "zelda", score: 0}
+	"Bowser",
+	"Captain Falcon",
+	"Donkey Kong",
+	"Dr. Mario",
+	"Falco",
+	"Fox",
+	"Ganondorf",
+	"Ice Climbers",
+	"Jigglypuff",
+	"Kirby",
+	"Link",
+	"Luigi",
+	"Mario",
+	"Marth",
+	"Mewtwo",
+	"Mr. Game & Watch",
+	"Ness",
+	"Peach",
+	"Pichu",
+	"Pikachu",
+	"Roy",
+	"Samus",
+	"Sheik",
+	"Yoshi",
+	"Young Link",
+	"Zelda",
 ]
 
 var ssb64 = [
-	{name: "Captain Falcon", url: "captainFalcon", score: 0},
-	{name: "Donkey Kong", url: "donkeyKong", score: 0},
-	{name: "Fox", url: "fox", score: 0},
-	{name: "Jigglypuff", url: "jigglypuff", score: 0},
-	{name: "Kirby", url: "kirby", score: 0},
-	{name: "Link", url: "link", score: 0},
-	{name: "Luigi", url: "luigi", score: 0},
-	{name: "Mario", url: "mario", score: 0},
-	{name: "Ness", url: "ness", score: 0},
-	{name: "Pikachu", url: "pikachu", score: 0},
-	{name: "Samus", url: "samus", score: 0},
-	{name: "Yoshi", url: "yoshi", score: 0}
+	"Captain Falcon",
+	"Donkey Kong",
+	"Fox",
+	"Jigglypuff",
+	"Kirby",
+	"Link",
+	"Luigi",
+	"Mario",
+	"Ness",
+	"Pikachu",
+	"Samus",
+	"Yoshi",
 ]
 
+function PrefList(n) {
+    this.size = n;
+    this.items = [{item: 0, equals: []}];
+    this.current = {item: 1, try: 0, min: 0, max: 1};
+
+    this.addAnswer = function(x, y, pref) {
+        if (pref == 0) {
+            this.items[this.current.try].equals.push(this.current.item);
+            this.current = {item: ++this.current.item, try: 0, min: 0, max: this.items.length};
+        } else {
+            if (pref == -1) this.current.max = this.current.try
+            else this.current.min = this.current.try + 1;
+            if (this.current.min == this.current.max) {
+                this.items.splice(this.current.min, 0, {item: this.current.item, equals: []});
+                this.current = {item: ++this.current.item, try: 0, min: 0, max: this.items.length};
+            }
+        }
+    }
+
+    this.getQuestion = function() {
+        if (this.current.item >= this.size) return null;
+        this.current.try = Math.floor((this.current.min + this.current.max) / 2);
+        return({a: this.current.item, b: this.items[this.current.try].item});
+    }
+
+    this.getOrder = function() {
+        var index = [];
+        for (var i in this.items) {
+            index.push(this.items[i].item);
+            for (var j in this.items[i].equals) {
+                index.push(this.items[i].equals[j]);
+            }
+        }
+        return(index);
+    }
+}
+
+// THIS FUNCTION ACTS AS THE PERSON ANSWERING THE QUESTIONS
+function preference(a, b) {
+    return parseInt(prompt(fruit[table.getQuestion().a] + " vs. " + fruit[table.getQuestion().b]));
+}
+
 function setCharacter(game, slot, id) {
-	name = window[game][id].name;
-	url = window[game][id].url;
+	name = window[game][id];
+	url = name.urlify();
 	document.getElementById("option" + slot).setAttribute("src", "css/images/smashTierSorter/" + game + "/"  + url + ".png");
 	document.getElementById("option" + slot + "Label").innerHTML = name;
 }
 
-function select(slot) {
-	if (slot == 1) {
-		window[currentGame][pos1].score++;
-	} else if (slot == 2) {
-		window[currentGame][pos2].score++;
-	}
-	
-	if (pos2 < window[currentGame].length - 1) {
-		pos2++;
-		option2 = window[currentGame][pos2];
-	} else if (pos1 < window[currentGame].length - 2) {
-		pos1++;
-		pos2 = 1 + pos1;
-		option1 = window[currentGame][pos1]
-		option2 = window[currentGame][pos2]
-	} else {
-		output();
-		return;
-	}
-	setCharacter(currentGame, 1, pos1);
-	setCharacter(currentGame, 2, pos2);
-	questionNumber++;
-	document.getElementById("questionNumber").innerHTML = questionNumber;
-}
-
 function output() {
-	window.finalArray = window[currentGame];
-	finalArray.sort(function(a,b) {
-		return b.score - a.score;  
-	});
-	
+	alert(table.getOrder());
+	/*	
 	window.finalArray = finalArray.map(function(item, i) {
 		if (i > 0) {
 			var prevItem = finalArray[i - 1];
@@ -253,6 +267,7 @@ function output() {
 	}
 	
 	window.finished = true;
+	*/
 }
 
 var questionNumber = 1;
@@ -278,17 +293,17 @@ function reset(game) {
 			return;
 		}
 	}
-	
-	window.finished = false;
-	questionNumber = 1;
 
-	window.option1 = window[game][0];
-	window.option2 = window[game][1];
-	window.pos1 = 0;
-	window.pos2 = 1;
+	window.table = new PrefList(fruit.length);
+	window.questionNumber = 0;
+	window.question;
 
-	setCharacter(game, 1, pos1);
-	setCharacter(game, 2, pos2);
+	while (question = table.getQuestion()) {
+		document.write(++c + ". " + fruit[q.a] + " or " + fruit[q.b] + "?<BR>");
+		var answer = preference(fruit[q.a], fruit[q.b]);
+		document.write("&nbsp;&rarr; " + [fruit[q.a], "no preference", fruit[q.b]][answer + 1] + "<BR>");
+		t.addAnswer(q.a, q.b, answer);
+	}
 }
 
 reset("ssb4");
