@@ -1,23 +1,26 @@
-function Hitbox(damage, angle, fixedKnockback, baseKnockback, knockbackScaling, radius, bone, boneOffset, transcendent, canRebound, specialEffect, willHit, sound) {
+function Hitbox(damage, angle, baseKnockback, knockbackGrowth, fixedKnockback, effect, willHitGrounded, willHitAerial, shieldDamage, willClang, soundEffect, reflectable, absorbable, blockable, willRebound, sound) {
 	this.damage = damage;
 	this.angle = angle;
-	this.fixedKnockback = fixedKnockback;
 	this.baseKnockback = baseKnockback;
-	this.knockbackScaling = knockbackScaling;
-	this.radius = radius;
-	this.bone = bone;
-	this.boneOffset = boneOffset;
-	this.transcendent = transcendent;
-	this.canRebound = canRebound;
-	this.specialEffect = specialEffect;
-	this.willHit = willHit;
+	this.knockbackGrowth = knockbackGrowth;
+	this.fixedKnockback = fixedKnockback;
+	this.effect = effect;
+	this.willHitGrounded = willHitGrounded;
+	this.willHitAerial = willHitAerial;
+	this.shieldDamage = shieldDamage;
+	this.willClang = willClang;
+	this.soundEffect = soundEffect;
+	this.reflectable = reflectable;
+	this.absorbable = absorbable;
+	this.blockable = blockable;
+	this.willRebound = willRebound;
 	this.sound = sound;
 	
 	this.hasPriorityOver = function(hitbox) {
-		if (hitbox.transcendent) {
+		if (hitbox.willClang = false) {
 			return false;
 		} else {
-			if (this.transcendent) {
+			if (this.willClang) {
 				return true;
 			} else if (this.damage - hitbox.damage > 9) {
 				return true;
@@ -26,8 +29,4 @@ function Hitbox(damage, angle, fixedKnockback, baseKnockback, knockbackScaling, 
 			}
 		}
 	}
-}
-
-function Move() {
-	//
 }
