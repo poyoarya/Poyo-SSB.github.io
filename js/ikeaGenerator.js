@@ -67,13 +67,21 @@ var markov = { //this code was stolen from this lovely website: http://blog.java
 		return ret;
 	}
 };
+
+function encodeHtmlEntity(str) {
+	var buf = [];
+	for (var i=str.length-1;i>=0;i--) {
+		buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
+	}
+	return buf.join('');
+}
  
 Array.prototype.random = function() {
 	return this[Math.floor(Math.random() * this.length)];
 };
 
 function generate() {
-	document.getElementById("text").innerHTML = markov.ask();
+	document.getElementById("text").innerHTML = encodeHtmlEntity(markov.ask());
 }
 
 ikeas.forEach(function(input) {
